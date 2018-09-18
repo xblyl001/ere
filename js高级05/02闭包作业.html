@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>我是ol里面的li</li>
+        <li>我是ol里面的li</li>
+        <li>我是ol里面的li</li>
+        <li>我是ol里面的li</li>
+        <li>我是ol里面的li</li>
+    </ol>
+    <!-- <script>
+        //闭包（闭包函数）：能够操作某些私有变量的函数称为闭包函数
+        var lis = document.getElementsByTagName('li');
+        for (var i = 0; i < lis.length; i++)
+            {
+            (function (j) {
+                //使用一个立即执行函数进行作用域的创新，j就是一个私有变量
+                //var j = i;
+                lis[i].onclick = function () {
+                    //i不能使用：取值为循环结束的值，如可得到循环过程中i的值，即可解决这个问题。
+                    console.log(j);
+                };
+            })(i);
+            }
+    </script> -->
+    <!-- <script>
+        //闭包（闭包函数）：能够操作某些私有变量的函数称为闭包函数
+        var lis = document.getElementsByTagName('li');
+        for (var i = 0; i < lis.length; i++)
+            {
+            (function (j) {
+                //使用一个立即执行函数进行作用域的创新，j就是一个私有变量
+                //var j = i;
+                lis[i].onclick = function () {
+                    //i不能使用：取值为循环结束的值，如可得到循环过程中i的值，即可解决这个问题。
+                    console.log(j);
+                };
+            })(i);
+            }
+    </script> -->
+
+    <script>
+        //闭包（闭包函数）：能够操作某些私有变量的函数称为闭包函数
+        var lis = document.getElementsByTagName('li');
+        for (var i = 0; i < lis.length; i++)
+            {
+            (function (j) {
+                //使用一个立即执行函数进行作用域的创新，j就是一个私有变量
+                //var j = i;
+                lis[i].onclick = function () {
+                    //i不能使用：取值为循环结束的值，如可得到循环过程中i的值，即可解决这个问题。
+                    console.log(j);
+                };
+            })(i);
+            }
+    </script>
+</body>
+</html>

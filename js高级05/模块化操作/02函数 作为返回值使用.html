@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fun () {
+        //     //函数内声明的变量称为局部变量，也叫私有变量，正常条件下外界无法访问。
+        //     //我们可以利用作用域的访问方式，将当前函数内的一个子作用域返回
+                //用户就可以按照你所制定的操作，对私有变量进行操作。
+                //利用这种设置方式可以实现数据的私有化，并且可以让用户进行某些指定的操作
+
+            // var num = Math.random();
+            // function getValue () {
+            //     console.log(num);
+            // }
+            // function setValue (value) {
+            //     num = value;
+            //     console.log(num);
+            // }
+            // return setValue;
+        // }
+        // //我希望可以在函数外对次对函数内的一个数据进行操作
+        // //通过return方式无法在函数外多次操作函数内的同一个数据
+        // console.log(fun());
+        // console.log(fun());
+        // var result = fun();
+        // result(1000);
+        // result(200);
+        // result(30);
+
+        // //例子：计算数组的和，由于这个和是全局的变量，任意操作均可修改，所以不安全
+        // var arr = [1,2,3];
+        // var sum = 0;
+        // for (var i = 0; i < arr.length;i++) {
+        //     sum += arr[i];
+        // }
+        // //以后只要使用了sum，就可以得到arr的和
+        // // sum = 'abc';
+        // function fun () {
+        //     var arr = [1,2,3];
+        //     var sum = 0;
+        //     //设置两个功能，一个功能是对数组求和，另一个是获取sum的值
+        //     return {
+        //         getValue : function() {
+        //             console.log(sum);
+        //         },
+        //         jiSuanSum : function () {
+        //             for (var i = 0; i<arr.length;i++) {
+        //                 sum += arr[i];
+        //             }
+        //         }
+        //     };
+        // }
+        //  var  obj = fun(); //计算数组中所有的数据的和
+        //  obj.jiSuanSum();
+        //  obj.getValue();
+        //  obj.getValue();
+        //  obj.getValue();
+      // function fun () {
+        //     //函数内声明的变量称为局部变量，也叫私有变量，正常条件下外界无法访问。
+        //     //我们可以利用作用域的访问方式，将当前函数内的一个子作用域返回
+                //用户就可以按照你所制定的操作，对私有变量进行操作。
+                //利用这种设置方式可以实现数据的私有化，并且可以让用户进行某些指定的操作
+
+            // var num = Math.random();
+            // function getValue () {
+            //     console.log(num);
+            // }
+            // function setValue (value) {
+            //     num = value;
+            //     console.log(num);
+            // }
+            // return setValue;
+        // }
+        // //我希望可以在函数外对次对函数内的一个数据进行操作
+        // //通过return方式无法在函数外多次操作函数内的同一个数据
+        // console.log(fun());
+        // console.log(fun());
+        // var result = fun();
+        // result(1000);
+        // result(200);
+        // result(30);
+
+        // //例子：计算数组的和，由于这个和是全局的变量，任意操作均可修改，所以不安全
+        // var arr = [1,2,3];
+        // var sum = 0;
+        // for (var i = 0; i < arr.length;i++) {
+        //     sum += arr[i];
+        // }
+        // //以后只要使用了sum，就可以得到arr的和
+        // // sum = 'abc';
+        // function fun () {
+        //     var arr = [1,2,3];
+        //     var sum = 0;
+        //     //设置两个功能，一个功能是对数组求和，另一个是获取sum的值
+        //     return {
+        //         getValue : function() {
+        //             console.log(sum);
+        //         },
+        //         jiSuanSum : function () {
+        //             for (var i = 0; i<arr.length;i++) {
+        //                 sum += arr[i];
+        //             }
+        //         }
+        //     };
+        // }
+        //  var  obj = fun(); //计算数组中所有的数据的和
+        //  obj.jiSuanSum();
+        //  obj.getValue();
+        //  obj.getValue();
+        //  obj.getValue();
+        // function fun () {
+        //     //函数内声明的变量称为局部变量，也叫私有变量，正常条件下外界无法访问。
+        //     //我们可以利用作用域的访问方式，将当前函数内的一个子作用域返回
+                //用户就可以按照你所制定的操作，对私有变量进行操作。
+                //利用这种设置方式可以实现数据的私有化，并且可以让用户进行某些指定的操作
+
+            // var num = Math.random();
+            // function getValue () {
+            //     console.log(num);
+            // }
+            // function setValue (value) {
+            //     num = value;
+            //     console.log(num);
+            // }
+            // return setValue;
+        // }
+        // //我希望可以在函数外对次对函数内的一个数据进行操作
+        // //通过return方式无法在函数外多次操作函数内的同一个数据
+        // console.log(fun());
+        // console.log(fun());
+        // var result = fun();
+        // result(1000);
+        // result(200);
+        // result(30);
+
+        // //例子：计算数组的和，由于这个和是全局的变量，任意操作均可修改，所以不安全
+        // var arr = [1,2,3];
+        // var sum = 0;
+        // for (var i = 0; i < arr.length;i++) {
+        //     sum += arr[i];
+        // }
+        // //以后只要使用了sum，就可以得到arr的和
+        // // sum = 'abc';
+        function fun () {
+            var arr = [1,2,3];
+            var sum = 0;
+            //设置两个功能，一个功能是对数组求和，另一个是获取sum的值
+            return {
+                getValue : function() {
+                    console.log(sum);
+                },
+                jiSuanSum : function () {
+                    for (var i = 0; i<arr.length;i++) {
+                        sum += arr[i];
+                    }
+                }
+            };
+        }
+         var  obj = fun(); //计算数组中所有的数据的和
+         obj.jiSuanSum();
+         obj.getValue();
+         obj.getValue();
+         obj.getValue();
+        
+    </script>
+</body>
+</html>

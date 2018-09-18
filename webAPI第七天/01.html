@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #box1 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="btn1">按钮</button>
+    <button id="btn2">按钮</button>
+    <script>
+        var box = document.getElementById('box');
+        var btn1 =document.getElementById('btn1');
+        var btn2 =document.getElementById('btn2');
+        var leftVal = 0;
+        var timer =null;
+        btn.onclick = function () {
+            timer = setInterval(function () {
+                if (leftVal<400) {
+                    leftVal +=10;
+                    box.style.left=leftVal + 'px';
+                } else {
+                    clearInterval(timer);
+                }
+            },20);
+        };
+        btn2.onclick = function () {
+            move(box,600);
+        }
+        function move (ele,target) {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var courrent = ele.offsetLeft;
+                var step = 10;
+                step = target >current ?step:-step;
+                if(current != target)
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#box {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			left: 100px;
+			top: 100px; 
+			border: 7px solid #000;
+			margin: 20px;
+		}
+		#fa {
+			width: 400px;
+			height: 400px;
+			border: 10px solid #000;
+			position: relative;
+		}
+	</style>
+	<script src="jquery-1.12.4.min.js"></script>
+	<script>
+		$(function () {
+			// 1 offset() - 了解
+			//   用于获取元素到body之间的距离，返回结果为对象，内部具有top和left属性
+			//  console.log($('#box').offset());
+
+			// 如果需要设置offset()，一定要自己加绝对定位
+			/*$('#box').offset({
+				top : 100,
+				left : 100
+			});*/
+
+
+			// 2 position()  用于获取元素到定位父盒子之间的距离 - 只读
+			// 与offsetLeft属性的区别：margin不计算在内的
+			//		避免方式：不给元素设置margin (由于定位了可以修改left与top，margin的存在没有太大意义)
+			// console.log($('#box').position());
+			// console.log($('#box')[0].offsetLeft);
+
+
+			// 只读功能，无法设置，设置了也没用。
+			$('#box').position({
+				top : 200,
+				left : 200
+			});
+			console.log($('#box').position());
+
+		});
+	</script>
+</head>
+<body>
+	<div id="fa">
+		<div id="box"></div>
+	</div>
+</body>
+</html>

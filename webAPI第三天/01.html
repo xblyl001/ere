@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- <img id="img" src="images/01big.jpg" alt="">
+    <button id="btn">图片切换</button> -->
+    <script>
+        var arr = [];
+       for(var i = 1; i <= 100; i++) {
+           if(i % 2 == 0) {
+               arr[arr.length] = i;
+           }
+       }
+       console.log(arr)
+    //    var j, temp;
+    //    for( var i =1;i < arr.length; i++) {
+    //        for(j=0;j<arr.length - i;j++) {
+    //            if(arr[j] < arr[j+1]) {
+    //             temp = arr[j];
+    //             arr[j]= arr[j+1];
+    //             arr[j+1]=temp;
+    //            }
+    //         }
+    //     }
+    //    console.log(arr);
+        // var img =document.getElementById('img');
+        // var btn = document.getElementById('btn');
+        // var count = 1;
+        // btn.onclick  = function () {
+        //     count++;
+        //     if(count > 5) {
+        //         count = 1;
+        //     }
+        //     img.src = 'images/0' + count + 'big.jpg';
+        // };
+        // var img = document.getElementById('img');
+        // var btn = document.getElementById('btn');
+        // // 点击事件
+        // var count = 1;
+        // btn.onclick = function () {
+        //     count++;
+        //     if(count > 5) {
+        //         count = 1;
+        //     }
+        //     img.src = 'images/0'+ count +'big.jpg';
+        // }
+        // var img = document.getElementById('img');
+        // var btn = document.getElementById('btn');
+        // var count = 1;
+        // btn.onclick = function() {
+        //     count++;
+        //     if(count > 5) {
+        //         count = 1;
+        //     }
+        //     img.src = 'images/0'+ count +'big.jpg';
+        // }
+        // var picArr = ['images/01big.jpg','images/02big.jpg','images/03big.jpg','images/04big.jpg','images/05big.jpg'];
+        // var img = document.getElementById('img');
+        // var btn = document.getElementById('btn');
+        // var index = 0;
+        // btn.onclick = function () {
+        //     index++;
+        //     if(index > picArr.length - 1) {
+        //         index = 0;
+        //     }
+        //     img.src = picArr[index];
+        // };
+    </script>
+</body>
+</html>

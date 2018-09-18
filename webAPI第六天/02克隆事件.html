@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h5  {
+            color: red;
+        }
+        #box {
+            color:blue;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        传智
+    <h5>传智黑马</h5>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        box.onclick =function() {
+            console.log('黑马1');
+        };
+        var result =box.cloneNode(true);
+        document.body.appendChild(result);
+        //cloneNode 克隆
+        //参数布尔值，true为深拷贝，false为浅拷贝
+        //克隆的内容，想要显示为appendChild和insertBefore
+    </script>
+</body>
+</html>

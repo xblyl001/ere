@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>冰心之恋</li>
+            <li>猕猴桃</li>
+            <li>萝卜</li>
+        </ul>
+    </div>
+    <script>
+        var arr = ['糕点','水果','蔬菜'];
+        var  ul = document.getElementById('list');
+        for(var i =0;i<arr.length;i++) {
+            var li = document.createElement('li');
+            ul.appendChild(li);
+            li.innerText = arr[i];
+        }
+       var arr =[{
+           title:'冰心之恋',
+           yuanjia:'217',
+           xianjia:'168'
+       },
+       {
+           title: '猕猴桃',
+           yuanjia: '55',
+           xianjia: '9' 
+       },
+       {
+           title: '萝卜',
+           yuanjia: '9',
+           xianjia: '3.2' 
+       }];
+    </script>
+</body>
+</html>

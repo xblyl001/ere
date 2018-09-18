@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<a href="03移除事件.html">这是a标签</a>
+	</div>
+	<script src="jquery-1.12.4.min.js"></script>
+	<script>
+		// return false;
+		//   - 在DOM中，可以取消默认事件效果
+		//   - 在jQuery中，不仅可以取消默认事件效果，还可以阻止事件传播
+
+		// 如果希望分别执行某种操作，可以使用事件对象的两个方法：
+		//   - e.preventDefault() 取消默认事件效果
+		//   - e.stopPropagation() 阻止事件传播
+
+		$('#box').on('click', function () {
+			console.log('这是box的事件');
+		});
+		$('a').on('click', function (e) {
+			console.log('这是a的事件');
+			// return false;
+			// e.preventDefault();
+			// e.stopPropagation();
+		});
+	</script>
+</body>
+</html>

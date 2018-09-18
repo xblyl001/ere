@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        var btn = document.getElementById('btn');
+        // btn.onclick = function() {
+        //     console.log('这是点击事件代码');
+        // };
+        btn.onmouseover =function () {
+                console.log('这是事件的移入代码');
+        } ;
+        btn.onmouseout =function () {
+                console.log('这是事件的移出代码');
+        } ;
+        //利用事件对象的type属性进行检测，可以使用一个函数对多个对象进行统一管理
+        btn.onclick = fun;      //设置一个点击事件的函数
+        // btn.onmouseover = fun;  //设置一个移入事件的函数
+        function fun(e) {
+            if(e.type === 'click') {
+                console.log('这是点击事件代码');
+            } else if (e.type === 'onmouseover') {
+                console.log('这是移入事件了');
+            }
+        }
+    </script>
+</body>
+</html>

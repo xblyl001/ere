@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//        1.找出元素 item 在给定数组 arr 中的位置
+    //    var arr =[1,2,3,'item',4];
+    //    console.log(arr[3]);
+
+// 输出描述:
+//         <!--如果数组中存在 item，则返回元素在数组中的位置，否则返回 -1 var ysWZ =arr[i];
+        // var ysWZ=0;
+        // var arr =[1,2,3,'item',4];
+        // for(var i=0;i<arr.length;i++) {
+        //     if(arr[i] == 'item'){
+        //         ysWZ +=i;
+        //     }else{
+        //        -1
+        //     }
+        // }
+        // console.log(ysWZ)
+// 2.计算给定数组 arr 中所有元素的总和
+// 输入描述:
+//         数组中的元素均为 Number 类型
+    // var arr= [1,2,3,4,5,6,];
+    // var sum =0;
+    // for(var i=1;i<arr.length;i++) {
+    //     sum +=i;
+    // }
+    // console.log(sum);
+// 3.移除数组 arr 中的所有值与 item 相等的元素。不要直接修改数组 arr，结果返回新的数组
+    // var arr = [1, 2, 3, 4, 5, 6, 4, 3, 2];
+    //数据类型的检测方式 instanceof-实例
+    // console.log(arr instanceof Array);//返回值为布尔值
+    // console.log(typeof arr);
+    // console.log('abc' instanceof Array);
+
+    //构造器
+    // console.log(arr .constructor=== Array);
+    //object.prototype.toString.call(数据)
+    // console.log(Object.prototype.toString.call(arr));
+    //出现的三种情况
+        //1变量声明未赋值的情况
+        //2数组中访问不存在的元素
+        //3/函数的返回值没设置
+        // var arr1 = [];
+        // //遍历获取所有元素
+        // for (var i = 0; i < arr.length; i++) {
+        //     //需要使用arr[i]与arr1中的每一个元素进行比较，如果没有一个元素相同，就放入
+        //     var count = 0;//存放arr中相同元素的个数
+        //     //遍历arr1所获取的所有元素
+        //     for (var j = 0; j < arr1.length; j++) {
+        //         if (arr[i] === arr1[j]) {
+        //             count++;
+        //         }
+        //     }
+        //     //如果count为0，说明result中不存在当前值，放入
+        //     if (count === 0) {
+        //         arr1[arr1.length] = arr[i];
+        //     }
+        // }
+        // console.log(arr1);
+    // var arr1 = [];
+    // //遍历arr,并获取所有元素
+    // for(i=0;i<arr.length;i++) {
+    //     //两个数组比较当没有一样的元素，则把元素放入新的数组
+    //     var count=0;//用于保存arr中每个元素相同的个数
+    //     //遍历arr1所获取的元素
+    //     for(var j=0;j<arr1.length;j++) {
+    //         //如果arr数组和arr1数组的元素相等了
+    //         if(arr[i]===arr1[j]) {
+    //             //则count加一
+    //              count++;
+    //         }
+    //     }
+    //     if(count ===0) {
+    //         arr1[arr1.length] = arr[i];
+    //     }
+    // }
+    // console.log(arr1);
+
+
+// 4在数组 arr 末尾添加元素 item。不要直接修改数组 arr，结果返回新的数组
+    // var arr= [1,2,3,4,5];
+    // arr[5]=6;
+    // console.log(arr);
+
+// 5合并数组 arr1 和数组 arr2。不要直接修改数组 arr，结果返回新的数组
+    // var arr1=[1,2,3];
+    // var arr2=[4,5,6];
+    // arr1[3]=arr2;
+    // console.log(arr1);
+
+// 6 在数组 arr 的 index 处添加元素 item。不要直接修改数组 arr，结果返回新的数组
+    // var arr=[1,2,4,5,6];
+    // arr[1,0,]=3;
+    // function fun(num, arr, fn) {
+    //     fn();
+    // }
+    // var fun2 = function () {
+    //     console.log('这是会传入fun中的函数功能代码');
+    // };
+    // fun2;
+    // fun(100, [1, 2, 3], fun2);
+    // fun(100, [4, 5, 6], function () {console.log('这是会传入fun中的函数功能代码');
+        
+    // });
+    // function fun() {
+    //     var sum =0;
+    //     for(var i =0;i<arguments.length;i++) {
+    //         sum += arguments[i];
+    //     }
+    //     console.log(sum);
+    // }
+    // console.log(100,200,300,400);
+    // var obj =new Object();
+    //  obj.age=18;
+    // console.log(obj.age);
+    // var obj = {
+    //     name:'jack',
+    //     age:18,
+    //     sayHi:function () {
+    //         console.log('这是sayHi的代码');
+    //     },
+    //     sayHeHe:function () {
+    //         console.log('这是sayHeHe的代码');
+    //     },
+    // };
+    // console.log(obj.name,obj['age']);
+    // function Create (name,age) {
+    //     this.name=name;
+    //     this.age=age;
+    // }
+    // var c1 = new Create('jack',18);
+    // console.log(c1);
+    // function fun() {
+    //     console.log(this);
+    //     console.log(window);
+    // }
+    // fun();
+    // var obj = {
+    //         name: 'zs',
+    //         age: 18
+    //     };
+    //     var name = 'age';
+    //     console.log(obj['name']); //zs 
+    //     console.log(obj.name); //zs
+    //上面的设置为对象属性设置为对象['属性']故显示同样；
+    //     console.log(obj[name]);//18
+    // var obj = new Object();
+    // obj.name='jack';
+    // obj['name']='jack';
+    // console.log(obj.name);
+    // console.log(obj['name']);
+    </script>
+</body>
+</html>

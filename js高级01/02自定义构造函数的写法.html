@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// function CreateObj(name，age) {
+		// 	this.name = name;
+		// 	this.age = age;
+		// }
+		// CreateObj.prototype.sayHi = function() {
+		// 	console.log('sayHi方法');
+		// };
+		// var c1 =new CreateObj('jack',19);
+		// var c2 =new CreateObj('rose',20);
+		// c1.sayHi();
+		// c1.sayHi();
+		// console.log(c1.sayHi===c2.sayHi);
+		function CreateObj (name) {
+			this.name = name;
+		}
+		CreateObj.prototype ={
+			sayHi1:function() {
+				console.log('这是sayHi');
+			}
+		};
+		var c1 =new CreateObj('jack');
+		console.log(c1.constructor);
+		c1.sayHi1();
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a id="link" href="03获取元素的索引值.html">跳转</a>
+	<script>
+		var link = document.getElementById('link');
+
+		// 默认事件效果：操作自带的功能
+		// 自定义事件效果：我们自己随便设置的事件代码。
+
+		// 我们设置的自定义事件效果会先执行。
+		// 如果不需要执行默认的事件效果，可以在自定义事件的最后位置设置return false;
+		link.onclick = function () {
+			alert('这是a标签的点击事件');
+			return false;
+		};
+	</script>
+</body>
+</html>

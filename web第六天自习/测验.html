@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+     var data = {
+    theadDatas: ["姓名", "年龄", "性别"],
+      tbodyDatas: [
+        { name: "张三", age: 22, sex: "男" },
+        { name: "小蝉", age: 17, sex: "女" },
+        { name: "元芳", age: 26, sex: "男" },
+        { name: "小红", age: 12, sex: "女" },
+        { name: "赵六", age: 48, sex: "男" },
+      ]
+}
+//必须要知道表格的基本结构
+var theadDatas = data.theadDatas //表头数据
+var tbodyDatas = data.tbodyDatas// 表主题数据
+// console.log(theadDatas,tbodyDatas)
+var str = '';
+var i;
+str+=' <table border="1" style="border-collapse:collapse"><thead><tr>';
+for(i = 0;i<theadDatas.length;i++){
+   str+=' <th>'+theadDatas[i]+'</th>'
+}
+str+='</tr></thead><tbody>';
+for(i = 0;i<tbodyDatas.length;i++){
+  str+='<tr>';
+  var obj = tbodyDatas[i]//
+    for(var key in obj){
+      str+='<td>'+obj[key]+'</td>';
+    }
+    str+='</tr>'
+}
+str+='</tbody></table>'
+document.write(str)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // console.log(null instanceof Object)
+    //   function fn(a,b){
+    //   console.log(a+b);
+    // }
+    // console.log(fn(1,2))
+    //   function fn(a,b){
+    // console.log(a+b);  
+    // return 4; 
+    //   }
+    //   console.log(fn(1,2))
+    // console.log([] == false)
+    // 编写一个数组去重的方法(用函数实现，要求写思路和注释)
+    // var arr = [2,4,2,4,5,1];//原数组
+    // var newArr = [arr[0]];
+    // // 让新数组的值和原数组做比较，如果新数组中已经存在了，就不放入，如果没有就放
+    // for(var i=1;i<arr.length;i++){
+    //   var flag = false;
+    //   for(var j=0;j<newArr.length;j++){
+    //     if(arr[i]===newArr[j]){
+    //       flag = true;
+    //       break;
+    //     }
+    //   }
+    //   if(!flag){
+    //     newArr[newArr.length]=arr[i]
+    //   }
+    // }
+    // console.log(newArr)
+    // console.log(new Set(arr))
+    // var arr= []
+    // arr.length=3;
+    // console.log(arr)
+    //   var foo = "11"+2-"1";  
+    // console.log(foo);
+    // console.log(typeof(typeof foo));
+    // []===[] //false
+    //     []相当于声明了两个不同的数组，而数组是引用类型的值，引用的是地址，
+    //     比较的是内存中存的是否是同一个对象，虽然都是两个空数组，但是引用地址不一样，结果当然为false。
+
+    // var num = 123;
+    // function fn(n) {
+    //   n = 1000;
+    // }
+    // fn(num);
+    // console.log(num);
+
+// 一、 冒泡排序的代码(基础版)
+//  var arr = [3,24,5,3,22];
+//  var temp;
+//  for(var i = 0;i<arr.length;i++){
+//    for(var j =0;j<arr.length-1-i;j++){
+//       if(arr[j]<arr[j+1]){
+//         temp = arr[j];
+//         arr[j] = arr[j+1];
+//         arr[j+1]=temp
+//       }
+//    }
+//  }
+//  console.log(arr)
+// 二、对象属性的两种访问方式
+//. []
+// var obj = {name:'zhangs',age:20,sex:'男',say:function(){
+//   console.log('被调用啦')
+// }}
+// for(var key in obj){
+//   // console.log(obj[key])
+//   console.log(obj[key])
+// }
+
+//  三、数组的遍历方法
+  // var arr = [3,45,63,2];
+  // // for(var i=0;i<arr.length;i++){
+  // //   console.log(arr[i])
+  // // }
+  // arr.forEach(function(item,index,array){
+  //   console.log(item,index,array)
+  // })
+
+//  console.log( null instanceof Object)  //检测
+// var arr = ["zhang_san","li_si","wang_wu","zhao_liu"]  //原字符串
+// //["zhangsan", "lisi", "wangwu", "zhaoliu"]
+// var str = arr.join(' ');
+// // console.log(str)
+// str=str.replace(/_/g,'')
+// // console.log(str)
+// var arr= str.split(' ');
+// console.log(arr)
+// 首先要明确 表格的具体的结构
+
+  </script>
+</body>
+
+</html>

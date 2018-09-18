@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            //将类名teshu的元素，他前面的li的内容改为 “前面的你很美”，其后面的
+            $('.teshu').prevALL().text('前面的你很美').end().nextALL().text('后面的你很爽，嗷嗷嗷');
+            $('.teshu').nextAll().text();
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>我是li标签</li>
+        <li>我是li标签</li>
+        <li>我是li标签</li>
+        <li>我是li标签</li>
+        <li>我是li标签</li>
+        <li class="teshu">我是li标签</li>
+        <li>我是li标签</li>
+        <li>我是li标签</li>
+        <li>我是li标签</li>
+        <li>我是li标签</li>
+        <li>我是li标签</li>
+    </ul>
+</body>
+</html>

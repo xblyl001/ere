@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li>这是li</li>
+
+    <!-- 邮箱<input type="text"> -->
+   <script>
+    //1 判断用户输入的邮箱地址是否含有“@”符号
+    //分析
+    //1 设置数组
+    //2 判断数组中有无@符号
+    //  var arr = [1,2,3,5,6,'@','b','c','f'];
+    //  for(var i = 0;i<arr.length;i++) {
+    //     if(arr[i]=='@') {
+    //         // alert('邮箱格式正确');
+    //     }else{
+    //         alert('请输入正确的邮箱格式')
+    //     }
+    //  };
+    // console.log(arr[i]);
+    //2.判断一下字符串中每一个字符是不是图片（.jpg就可以）
+
+
+    //3. var arr=["杞"，"枸"，"泡"，"里"，"杯"，"温"，"保"，"，"，"已"，"得"，"不"，"年"，"中"，"到"，"人"];
+        //将此数组结果改为字符串的形式倒序输出。
+        // var arr=["杞"，"枸"，"泡"，"里"，"杯"，"温"，"保"，"，"，"已"，"得"，"不"，"年"，"中"，"到"，"人"];
+        // console.log(arr.toString().reverse());
+
+    //4 求圆的面积（用函数做）
+
+    //5  下面的代码会输出什么结果。
+        // function test() {
+        // console.log(a);
+        var lis =document.getElementsByTagName('li');
+        for(var i =0;i<lis.length;i++) {
+            lis[i].onclick = function() {
+                // console.log(i);
+            };
+        }
+        console.log(i,'此处为for执行后的i的取值');
+   </script>
+</body>
+</html>

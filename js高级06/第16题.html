@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid #000;
+        }
+        
+    </style>
+</head>
+<body>
+    请输入姓名：<input type="text"><br>
+    请输入邮箱：<input type="text"><br>
+    请输入手机：<input type="text" id="txt"><br>
+    请输入地址：<input type="text"><br>
+    <input type="button" value="添加" id="btn"><br>
+    
+    <script>
+        var tableDatas = {
+    theadDatas: ["姓名", "邮箱", "手机","地址"],
+    tbodyDatas: [
+      {name: "小黑"},
+    ]
+  };
+  var theadDatas = tableDatas.theadDatas;
+  var tbodyDatas = tableDatas.tbodyDatas;
+  var i, k, tbds;
+        var btn = document.getElementById("btn");
+        var txt = document.getElementById("txt");
+        btn.onclick = function() {
+            if(txt.value == "") {
+                alert("请将数据填入完全");
+            }else {
+                var th = document.createElement("th");
+                setText(th,txt.value);
+            }
+        };
+    </script>
+</body>
+</html>

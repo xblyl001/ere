@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name : 'jack',
+            age : 18,
+            aiHao : ['游泳','敲代码','跑步'],
+            gf : {
+                name1 : 'rose',
+                ge1 : 21,
+            }
+        };
+        //普通遍历操作：浅拷贝
+        // var obj2 = {};
+        // for (var k in obj) {
+        //     obj2[k] = obj[k]; 
+        // }
+        // obj.aiHao[0] = '吃饭';
+        // console.log(obj2.aiHao);
+        //深拷贝操作：用于对复杂数据类型进行完整拷贝
+        var obj2= {};
+        function deepCopy (obj,obj2) {
+            for (var k in obj) {
+                //利用这个条件检测数据是基本数据类型还是复杂数据类型
+                if(typeof obj[k] !== 'object' || obj[k] === null) {
+                    //当某个属性是基本数据类型时，直接拷贝即可
+                    obj2[k] = obj[k];
+                } else {
+                    //当某个属性是复杂数据类型时，需要再次进行拷贝操作
+                    //需要考虑数据到底是数组还是对象结构
+                    obj2[k] = obj[k].constructor === Array ? [] : {};
+                    deepCopy(obj[k],obj2[k]);
+                }
+            }
+        }
+        deepCopy(obj,obj2);
+        //obj.gf.name1 = 'luck';
+        console.log(obj,obj);
+        console.log(obj2);
+        //特殊点：这个功能没有明显的设置结束条件，原因为数据不可能为无限维度
+    </script>
+</body>
+</html>

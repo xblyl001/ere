@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 编写代码实现数组去重
+        // 要求:
+        // 1. 使用数据为[1, 1, 2, 3, 3, 2, 4, 5, 5, 4, 3, 2, 1]
+        // 2. 不能使用数组方法
+        // 3. 使用假设成立法
+        // 4. 使用循环嵌套结构
+        // 5. 代码中有一个原数据数组和一个结果数组，并将处理结果保存在新的数组中
+        // 6. 合理的使用break减少循环执行次数
+        // 在控制台中输出去重的结果
+        var arr = [1, 1, 2, 3, 3, 2, 4, 5, 5, 4, 3, 2, 1];
+        var arr1 = [];
+        for (var i = 1; i < arr.length; i++) {
+            var flag = false;
+            for (var j = 0; j < arr1.length; j++) {
+                if (arr[i] === arr1[j]) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) {
+                arr1[arr1.length] = arr[i]
+            }
+        }
+        console.log(arr1)
+        console.log(new Set(arr))
+    </script>
+
+
+</body>
+
+</html>

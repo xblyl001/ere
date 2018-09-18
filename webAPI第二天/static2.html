@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .nodeSmall {
+      width: 50px;
+      height: 50px;
+      background: url(images/bgs.png) no-repeat -159px -51px;
+      position: fixed;
+      right: 10px;
+      top: 40%;
+    }
+    
+    .erweima {
+      position: absolute;
+      top: 0;
+      left: -150px;
+    }
+    
+    .nodeSmall a {
+      display: block;
+      width: 50px;
+      height: 50px;
+    }
+    
+    .hide {
+      display: none;
+    }
+    
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<!--父盒子-->
+<div class="nodeSmall" id="node_small">
+  <a href="#"></a>
+  <!--二维码的盒子-->
+  <div class="erweima hide fl colorBlue abc" id="er">
+    <img src="images/456.png" alt=""/>
+  </div>
+</div>
+<script>
+  // 通过对父盒子的移入和移出，设置内部二维码盒子的显示与隐藏（通过类名控制）
+
+  // 1 获取元素
+  var box = document.getElementById('node_small');
+  var er = document.getElementById('er');
+
+  // 2 移入事件
+
+  var box = document.getElementById('box')
+       box.onmousemove = function (){
+           this
+       } 
+
+
+</script>
+
+</body>
+</html>

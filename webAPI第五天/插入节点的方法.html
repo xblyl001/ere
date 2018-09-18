@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>呵呵呵</li>
+        <li>哈哈哈</li>
+        <li>嗷嗷嗷</li>
+    </ul>
+    <script>
+        var ul = document.getElementById('list');
+        var li = document.createElement('li');
+        li.innerHTML = "我插队了，呵呵呵";
+        ul.insertBefore(li,ul.children[3]);
+    </script>
+    <!-- <ul id="list">
+        <li>中国</li>
+        <li>人</li>
+        <li>民</li>
+        <li>棒</li>
+    </ul>
+    <script>
+        var ul = document.getElementById('list');
+        var li = document.createElement('li');
+        li.innerHTML = '这是一个li';
+        ul.insertBefore(li,ul.children[2]);
+    </script> -->
+</body>
+</html>

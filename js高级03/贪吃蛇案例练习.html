@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .map {
+            width: 1000px;
+            height: 600px;
+            background-color: #ccc;
+            position: relative;
+            margin: 20px auto;
+        }
+        .map div {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="score">得分：0</h2>
+    <div class="map"></div>
+    <script>
+        //大体功能
+        //地图
+        //食物
+        //蛇
+        //食物功能 大小 颜色 地图
+        function Food(options) {
+            //当一个函数的参数多时，可以设置为对象属性的传入方式，好处是不用记住参数列表的顺序
+            this.width = option.width || 20;
+            this.height = option.height || 20;
+            this.Color = option.bgColor || 'green';
+            this.map = options.map;
+            //后续功能设置使用了element x y 这些属性时，可以在构造函数体中进行标识
+            this.x = 0; //保存食物盒子的横坐标
+            this.y = 0; //保存食物盒子的纵坐标
+            this.element = null; //用于保存本次创建的食物盒子
+            this.init();
+            //我们发现只要进行了food构造函数的调用，一定会进行初始化的操作
+            
+            //功能设置：绘制食物盒子，设置盒子的随机坐标位置
+            //init- 初始化，绘制食物盒子
+            Food.prototype.init = function() {
+                //我们发现，食物不仅会绘制一次，如果绘制多次时，需要将就得食物盒子移除
+                if(this.element) {
+                    this.map.removeChild(this.element);
+                }
+                var div = document.createElement('div');
+                this.element = div;
+                div.style.width = this.width + 'px';
+                div.style.height = this.height + 'px';
+                div.style.backgroundColor = this.bgColor;
+                this.map.appendChild(div);
+
+                //我们发现每次进行绘制操作，一定会进行位置的设置
+                //可以让randompos的调用设置到init最后
+                this.randompos();
+            };
+            //设置随机位置
+            Food.prototype.randompos = function() {
+                //需要先计算出可以现实的随机坐标值，再根据坐标值计算显示的left和top
+                this.x = parseInt(Math.randompos() * this.map.offsetWidth / this.width);    //70行 食物的随机数 写错 
+                this.y = parseInt(Math.randompos() * this.map.offsetWidth / this.height);    //70行 食物的随机数 写错
+
+                //需要将坐标设置给食物盒子
+                this.element.style.left = this.x *this.width + 'px';
+                this.element.style.top = this.y *this.height + 'px';
+            };
+            //小蛇功能制作
+            //基本属性 
+            //相同基本属性：宽 高 地图 
+            //不同属性： x y 颜色
+            function Snake (options) {
+                this.width = option.width || 20;
+                this.height = option.height || 20;
+                this.map = option.map;
+                this.body = [
+                    {x:1, y: 1, bgColor : 'blue'},
+                    {x:2, y: 1, bgColor : 'blue'},
+                    {x:3, y: 1, bgColor : 'orange'}
+                ];
+                //在设置基本属性时，将elements属性设置为空数组
+                this.element = [];
+                //小蛇设置一个运动方向标识属性
+                this.direction = 'right';
+                //只要进行实例化操作，就一定进行第一次初始化，可以在内部调用init
+                this.init();
+            }
+            //结构移除后再将数组清空
+            this.element = [];
+            var body = this.dody;
+            //根据this.body中的对象的个数进行div创建，并设计对应的样式
+            for (var i = 0; i < body.length;i++) {
+                var div = document.createElement('div');
+                this.element.push(div);
+                div.sytle.width = this.width + 'px';
+                div.sytle.height = this.height + 'px';
+                div.sytle.left = body[i].x * this.width + 'px';
+                div.sytle.top = body[i].y * this.height + 'px';
+                div.style.backgroundColor = body[i].bgColor;
+                this.map.appendChild(div);
+            }
+        };
+        //设置小蛇的move方法：move方法只会让小蛇移动一步，跑起来是游戏控制的功能
+        Snake.prototype.move = function () {
+            var body = this.body;
+            //通过观察发现，运动时只有蛇头是新坐标，其余的元素均向前进行坐标值获取
+            for ( var i = 0; i < body.length - 1; i++) {
+                body[i].x = body[i + 1].x;
+                body[i].y = body[i + 1].y;
+            }
+            //move后，需要进行新的小蛇绘制操作
+            //通过后期的修改，讲init设置到game的snakeRun方法中了。
+            //this.init();
+        };
+        //游戏控制功能
+        //用于游戏进行整体控制
+        function Game(map, score) {
+                //属性；实物，小蛇，地图 
+                this.food = new Food({ map: map });
+                this.Snake = new Snake({ map: map });
+                this.map = map;
+                this.score = score;
+            }
+            //设置游戏开始功能
+            Game.prototype.start = function () {
+                //1绘制食物(在food实例化的同时以及进行了初始绘制)
+                //2绘制小蛇（在snake实例化的同时以及进行了初始绘制）
+                //3小蛇运动
+                this.snakeRun();
+                //5设置游戏规则：吃食物，游戏结束，计分
+            };
+            Game.prototype.snakeRun = function() {
+                var snake = this.snake;
+                var food = this.food;
+                var map = this.map;
+                var score = this.score;
+                // 设置小蛇的持续运动效果
+                var timer =  null;
+                var count = 0;
+                timer = setInterval(function () {
+                    // 获取运动之前的蛇尾坐标
+                    var sheWeiX = snake.body[0].x;
+                    var sheWeiY = snake.body[0].y;
+                    var sheTou = snake.body[snake.body.length - 1];
+
+                    //定时器的参数1是一个函数，使用this时会出现问题，可以通过改变了保存的方式解决
+                    snake.move();
+                    //吃食物检测，如果运动过程中，设置头坐标与食物坐标相同，说明迟到了
+                    if(sheTou.x ===food.x && sheTou.y ===food.y) {
+                        //按照旧的蛇尾坐标，设置新的设为坐标即可
+                        snake.body.unshift({x : sheweiX,  y :sheWeiY, bgColor: 'orange'});
+                        //重新进行食物绘制
+                        food.init();
+                        //设置吃到的食物的数量
+                        count++;
+                        score.innnerText = '游戏分数：' + count *10;
+                    }
+                    //游戏结束检测：蛇头超出地图范围，游戏结束
+                    if (sheTou.x < 0 || sheTou.y < 0 || sheTou.x > map.offsetWidth / snake.width - 1 || sheTou.y > map.offsetHeight / snake.height - 1) {
+                        alert('游戏结束，撞墙了！');
+                        clearInterval(timer);
+                        //设置return阻止 超出后的绘制（看起来好看一点）
+                        return;
+                    }
+                    //检测游戏结束，小蛇自尽了，游戏结束
+                    //通过观察发现，蛇头只能碰到蛇身的前四节以外的才会自尽
+                     for(var i = 0; i < snake.body.length - 4; i++) {
+                         //比较蛇身与蛇头坐标的关系即可
+                         if (sheTou.x === snake.body[i].x && sheTou.y === snake.body[i].y) {
+                             alert('游戏结束，蛇自尽了！');
+                             clearInterval(timer);
+                         }
+                     }
+                     //小蛇的init操作书写原本写在小蛇的move中，但通过吃食物等操作，可以修改了小蛇body的属性，
+                     //给小蛇设置一个directiion属性，通过按键修改这个属性即可，设置keydown事件进行操作即可
+                     snake.init();
+
+                }, 80);
+            };
+            Game.prototype.chage = function () {
+                //用于设置按键操作，修改小蛇的运动方向
+                //给小蛇设置一个direction属性，通过按键修改这个属性即可
+                var snake = this.snake;
+                var flag = true;
+                document.onkeydown = function (e) {
+                    if (flag === false) {
+                       return;
+                    }
+                    flag = false;
+                    // 先在点击后设置标记flag为false，阻止下次事件，同时设置定时器，在100毫秒后允许再次触发
+                    setTimeout(function() {
+                        flag = true;
+                    },100);
+
+                    var code = e.keyCode; // 左37 上 38 右 39 下40
+                    switch (true) {
+                        case code === 37 && snake.direction !== 'right':
+                            snake.direction = 'left';
+                            break;
+                        case code === 38 && snake.direction !== 'down':
+                            snake.direction = 'up';
+                            break;
+                        case code === 39 && snake.direction !== 'left':
+                            snake.direction = 'right';
+                            break;
+                        case code === 40 && snake.direction !== 'up':
+                            snake.direction = 'down';
+                            break;
+                    }
+                };
+            };
+            var map  = document.getElementById('map');
+            var score = document.getElementById('score');
+            var g1 = new Game(map,score);
+            g1.start();
+    </script>
+</body>
+</html>

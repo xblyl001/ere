@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="ipt" value="该买秋裤了">
+	<script>
+		var ipt document.getElementById('ipt');
+		ipt.onfocus  = function() {
+			if (this.value === '该买秋裤了') {
+				this.value = '';
+			}
+		};
+		ipt.onblur  = function() {
+			if (this.value === '') {
+				this.value = '该买秋裤了';
+			}
+		};
+	</script>
+</body>
+</html>

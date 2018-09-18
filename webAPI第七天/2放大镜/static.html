@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 350px;
+      height: 350px;
+      margin: 100px;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+
+    .big {
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+      left: 360px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      display: none;
+    }
+
+    .mask {
+      width: 175px;
+      height: 175px;
+      background: rgba(255, 255, 0, 0.4);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      cursor: move;
+      display: none;
+    }
+
+    .small {
+
+      position: relative;
+
+    }
+
+    .aaa {
+      vertical-align: middle;
+    }
+
+    .big {
+      position: relative;
+      top: -350px;
+    }
+
+    .big img {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" id="box">
+    <!--左侧的盒子-->
+    <div class="small">
+      <!--图片-->
+      <img src="images/small.webp" width="350" class="aaa" alt="" />
+      <!--左侧黄色的小盒子-->
+      <div class="mask"></div>
+    </div>
+    <!--右侧的盒子-->
+    <div class="big">
+      <!--右侧盒子内的大图片-->
+      <img src="images/big.jpg" width="800" alt="" />
+    </div>
+  </div>
+  <script>
+    // 步骤：
+    //   1 鼠标移入移出显示隐藏盒子(黄盒子和右侧大盒子)
+    //   2 鼠标在左侧盒子中移动时让黄盒子居中跟随
+    //   3 设置黄盒子的运动边界
+    //   4 设置右侧大图的对应运动
+
+    // 实现：
+    //  1 获取元素
+    var box = document.getElementById('box');
+    var smallBox = box.children[0]; // 左侧小盒子
+    var mask = smallBox.children[1]; // 黄盒子
+    var bigBox = box.children[1]; // 右侧大盒子
+    var bigImg = bigBox.children[0]; // 右侧大图
+
+    // 2 设置移入移出效果
+    box.onmouseover = function () {
+      mask.style.display = 'block';
+      bigBox.style.display = 'block';
+    };
+    // 移除效果
+    box.onmouseout = function () {
+      mask.style.display = 'none';
+      bigBox.style.display = 'none';
+    };
+    // 跟随效果
+    smallBox.onmousemove = function (e) {
+      var e = e || window.event;//事件对象兼容
+        // mask的运动位置      //  鼠标x坐标    box的外部距离   mask宽高的一半
+      var x = e.clientX - box.offsetLeft - mask.offsetWidth / 2;
+      var y = e.clientY - box.offsetTop - mask.offsetHeight / 2;
+
+      // 设置运动边界
+      x = x < 0 ? 0 : x;//设置x最小值
+      y = y < 0 ? 0 : y;//设置y最小值
+      // 计算最大值
+      var maxLeft = smallBox.offsetWidth - mask.offsetWidth;
+      var maxTop = smallBox.offsetHeight - mask.offsetHeight;
+      x = x > maxLeft ? maxLeft : x;//最大值检测
+      y = y > maxTop ? maxTop : y;
+      //设置mask的left与top
+      mask.style.left = x + "PX";
+      mask.style.top = y + "PX";
+      //设置右侧的大图对应运动
+      //计算运动的比例
+      //情况1所有的盒子均对应成比例
+      var biliX = mask.offsetWidth / (bigBox.offsetWidth - 2);
+      var biliY = mask.offsetHeight / (bigBox.offsetHeight - 2);
+      // 由于运动的步长为小布长，比例也是小比例，采用除法
+      bigImg.style.left = -x / biliX + "PX";
+      bigImg.style.top = -y / biliY + "PX";
+    };
+    // 情况2如果盒子不是等比例，可以采用可运动距离比的计算方式
+    // 总距离 = 步长*步数 在这个操作中步数是固定的（靠一个事件触发，次数是一定的）
+    //总距离可求，计算出总距离比，就可以计算出某个元素运动的步长
+  </script>
+</body>
+
+</html>

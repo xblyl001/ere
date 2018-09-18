@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        thead {
+            text-align: center;
+        }
+        tbody {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="tj">
+        姓名<input type="text"><br>
+        邮箱<input type="text"><br>
+        手机<input type="text"><br>
+        地址<input type="text"><br>
+    </div>
+    <input type="button" value="添加" id="btn">
+    <table border="1" cellpadding="0" cellspacing="0" id="tb">
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>邮箱</td>
+                <td>手机</td>
+                <td>地址</td>
+            </tr>
+        </thead>
+        <tbody id="tby">
+            <tr>
+                <td>小黑</td>
+                <td>xiaohei@126.com</td>
+                <td>1999999000123</td>
+                <td>北京</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function my$(id) {
+          return  document.getElementById(id);
+        }
+        //获取按钮点击事件
+        my$('btn').onclick =function () {
+        var flag = true;
+        //获取每个文本框
+        var txts = my$('tj').getElementByTagName('input');
+        //确定每一项不为空
+        for (var i  =0;i<txts.length;i++) {
+            if(txts[i].value.length==0){
+                flag= false;
+                break;
+            }
+        }
+        if(flag) {
+            //创建一行
+            var trObj = document.createElement('tr');
+            //把行加入到tbody中
+            my$('tby').appendChild(trObj);
+            for(var i=0;i <txts.length;i++) {
+                //遍历文本框的同时创建列
+                var tdObj = document.createElement('td')
+                trObj.appendChild('tdObj');
+                tdObj.innerHTML= txts[i].value;
+            }
+        } else {
+            alert('请将数据填入完全')
+        }
+        //获取table中的所有的行，注册鼠标进入和离开的事件
+        var trObjs = my$('tb').getElementByTagName('tr');
+            for (var i = 0;i < trObjs.length;i++) {
+                trObjs[i].style.backgroundColor = i % 2 == 0 ?'red' : 'yellow';
+            }
+        };
+    </script>
+</body>
+</html>

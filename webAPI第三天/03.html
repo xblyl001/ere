@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">这是box的内容<span>这是span</span></div>
+    <script>
+        //innerText 和textContent都是用于进行纯文本操作
+        //textContent是一个标准属性，ie9以下不支持，innerText是ie推出的属性，ie中没问题，其他浏览器有部分问题
+        //由于以上功能都具有兼容性问题，在使用时不能单独使用，需要进行兼容性处理操作
+        // var box = document.getElementById('box');
+        // console.log(box.textContent);
+        var box = document.getElementById('box');
+        console.log(box.textContent);
+        //我们发现对象的属性如果不支持，默认为undefined
+        // if(typeof box.textContent !== 'undefined') {
+        //     //说明支持这个功能
+        //     console.log(box.textContent);
+        // }else{
+        //     //说明支持innerText
+        //     console.log(box.innerText);
+        // }
+        function getText (ele) {
+            if (typeof ele.textContent !=='undefined') {
+                //说明支持这个功能
+                return ele.textContent;
+            } else {
+                //说明支持innerText
+                return ele.innerText;
+            }
+        }
+    </script>
+</body>
+</html>

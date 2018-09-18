@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .nav {
+            height: 30px;
+            background: #036663;
+            border-bottom: 1px solid #369;
+            line-height: 30px;
+            padding-left: 30px;
+        }
+
+        .nav a {
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            text-decoration: none;
+
+        }
+
+        .d-box {
+            width: 400px;
+            height: 300px;
+            border: 5px solid #eee;
+            box-shadow: 2px 2px 2px 2px #666;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            background-color: white;
+        }
+
+        .hd {
+            width: 100%;
+            height: 25px;
+            background-color: #7c9299;
+            border-bottom: 1px solid #369;
+            line-height: 25px;
+            color: white;
+            cursor: move;
+        }
+
+        #box_close {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="javascript:;" id="register">注册信息</a>
+    </div>
+
+    <!--大盒子-->
+    <div class="d-box" id="d_box">
+        <!--可以拖拽的部分-->
+        <div class="hd" id="drop">注册信息 (可以拖拽)
+            <span id="box_close">【关闭】</span>
+        </div>
+        <div class="bd"></div>
+    </div>
+</body>
+<script>
+    //获取大盒子元素和box下的第一个子元素
+    var box = document.getElementById('d_box');
+    var hd = box.children[0];
+    //鼠标按下后的效果   点击hd获取鼠标在盒子内部的坐标
+    hd.onmousedown = function(){
+        var e = e || window.event;
+        var x = e.clientX -box.offsetLeft;
+        var y = e.clientY -box.offsetTop;
+        //标跟随效果
+        document.onmousemove = function () {
+            var e = e || window.event;
+            box.style.left = e.clientX - x + 'px';
+            box.style.top = e.clientY - y + 'px';
+        };
+    };
+    //鼠标抬起，跟随效果取消
+    hd.onmouseup = function() {
+        document.onmousemove = null;
+        return false;
+    }
+</script>
+</html>

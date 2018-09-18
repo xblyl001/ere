@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //正则表达式：用于对字符串进行处理，匹配text，替换，提取
+        //实现方式 ： 不是js中独有的功能
+        //大多数编程语言都对正则有实现方式，在js中爱用了内置对象设置方式的实现
+         //2字面量创建
+        // var reg = /abc/;
+        // console.log(reg.test('abc'));
+        //正则的声明方式；
+        //1构造函数的创建方式
+        // var reg = new RegExp('abc');
+        // var reg = /[abc]/;
+        // console.log(reg.test('abc'));
+        //反向类
+        // var reg = /[^abc]/;
+        // console.log(reg.test('abc'));
+        //简单类和test方法的使用
+        //简单类：表示当前正则用于匹配含有内部字符的字符串，即字符串中有ABC即可，位置不限，
+        // var reg = /abc/;
+
+        // //正则方法：test（）-
+        // //参数为要匹配的字符串，返回布尔类型值
+        // console.log(reg.test('abc'));
+        // console.log(reg.test('abc123123'));
+        // console.log(reg.test('123123abc'));
+        // console.log(reg.test('123abc123'));
+        // console.log(reg.test('1a2b3c1'));
+
+
+        //符号类：在正则内部使用[]标识
+        //含义：[]内部整体表示一位字符，内部书写的多个字符表示此位置的多种情况。
+        // var reg = /[abcd]/;//基本形式
+        // //例如,检测的字符串有以下四种情况 abc bbc  cbc dbc
+        // var reg = /[abcd]bc/;
+        // console.log(reg.test('abc'));
+        // console.log(reg.test('bbc'));
+        // console.log(reg.test('cbc'));
+        // console.log(reg.test('dbc'));
+        
+        //反向类：基于字符串的功能
+        //标识方法：可以匹配除内部字符外的其他字符，当前字符有没有都不影响，主要看其他字符,
+        // var reg = /[^abc]/;
+        // console.log(reg.test('abc'));
+        // console.log(reg.test('123'));
+        // console.log(reg.test('q'));
+        // console.log(reg.test('qabc'));
+        
+
+        //范围类：
+            //作用：是对字符类功能的扩展
+            //标识方式：在字符类内部使用-标识范围
+            // var reg = /[b-n]/;
+            // console.log(reg.test('d'));
+            // console.log(reg.test('a'));
+            // console.log(reg.test('h'));
+            //常用的范围类表示方式：
+            //表示所有的小写字母 /[a-z]/
+            //表示所有的大写字母 /[A-Z]/
+            //表示所有的数字  /[0-9]/
+
+
+            //组合类：是对范围类的功能扩展
+            //作用：用于同时书写多种规则
+            // var reg = /[0-9a-zB-F]/;
+            // console.log(reg.test('3'));
+            // console.log(reg.test('h'));
+            // console.log(reg.test('D'));
+            // console.log(reg.test('J'));
+
+
+            //预定义类：正则表达式内部预先提供好的匹配方式
+            //数字字符操作
+            
+    </script>
+</body>
+</html>

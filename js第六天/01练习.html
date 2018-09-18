@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 求10-20之间的随机数
+        // document.write(Math.floor(Math.random()*11 +10));
+        // document.write(Math.floor(Math.random()*11+10));
+        // document.write(Math.floor(Math.random()*11 +10));
+        // 随机生成颜色RGB
+        // rgb(0-255,0-255,0-255);
+        // document.write('rgb' + '(' + Math.floor(Math.random()*256) + ','+ Math.floor(Math.random()*256) +' ,' + Math.floor(Math.random()*256) +')' );
+        // document.write('agb'+'('+ Math.floor(Math.random()*256) + ',' + Math.floor(Math.random()*256) + ',' + Math.floor(Math.random()*256) + ')');
+        // document.write('RGB'+'('+ Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+')');
+    //     //模拟实现max()/min()
+    // function max () {
+    //     for(var i=0;i<arguments.length;i++){
+    //         var max = arguments[0];
+    //         if(arguments[i]>max) {
+    //             max=arguments[i];
+    //         }
+    //     }
+    //     return max;
+    // }
+    // console.log(max(1,3,4,7,9,65,77));
+    // function max () {
+    //     var max =arguments[0];
+    //     for(var i=0;i<arguments.length;i++) {
+    //         if(arguments[i]>max) {
+    //             max =arguments[i];
+    //         }
+    //     }
+    //     return max;
+    // }
+    //     console.log(max(1,2,3,4,5));
+    // function max() {
+    //     var max =arguments[0];
+    //     for(var i=1;i<arguments.length;i++) {
+    //         if(arguments[i]>max) {
+    //             max=arguments[i];
+    //         }
+    //     }
+    //     return max;
+    // }
+    // console.log(max(1,3,6,8,90));
+    //求min
+    // function min() {
+    //     var min =arguments[0];
+    //     for(var j=1;j<arguments.length;j++) {
+    //         if(arguments[j]<min) {
+    //             min=arguments[j];
+    //         }
+    //     }
+    //     return min;
+    // }
+    // console.log(min(1,2,5,8,0.9));
+    // function min() {
+    //     var min =arguments[0];
+    //     for(var j=1;j<arguments.length;j++) {
+    //         if(arguments[j]<min) {
+    //             min=arguments[j];
+    //         }
+    //     }
+    //     return min;
+    // }
+    // console.log(min(1,2,3,0.1,9));
+    // function min() {
+    //     var min = arguments[0]; //设定最小值数组中的第一个元素
+    //     for(var j=1;j<arguments.length;j++) { // 遍历伪数组
+    //         if(arguments[j]<min) { //如果伪数组小于设定的最小值
+    //             min=arguments[j]; //则将值赋给min
+    //         }
+    //     }
+    //     return min;   
+    // }
+    // console.log(min(1,2,3,0.6,99));
+    //数组的两种使用形式
+    //作为存储数据使用
+    //数组是按照索引排列的所以只能保存一种数组；
+    // var arr = [1,2,3,4,5];
+    // //对象是按照键值对保存的所以可以保存两组相关联的数组
+    // var obj = {
+    //     //如个人成绩
+    //     zs:87,
+    //     ls:87,
+    //     ww:89,
+    // };
+    //2作为工具使用；
+    //设置一个或多个对象，通过对象的属性和方法结合完成一些操作，我们就称这是一种工具的使用方法。
+    //工具又分为自定义工具和内置工具
+
+    //内置对象
+    //为了方便开发者使用js对数据的操作，提供了不同的功能，又根据类型的不同，功能里又分了不同的对象，故我们称其为内置对象
+    // var arr = [1,2,3];
+    // arr.push(100);
+    // console.log(arr); //在数组最后添加元素
+
+
+
+    //Math对象
+    // console.log(Math.max(1,2,3,66,99));
+    // console.log(Math.min(1,2,3,0.2));
+    // console.log(Math.random());//随机数 0-1
+    // console.log(Math.round(2.9));//四舍五入
+    // console.log(Math.ceil(1.6));//向上取整    2
+    // console.log(Math.floor(1.9));//向下取整   1
+    // console.log(Math.abs(-2));//获取绝对值 2
+    // console.log(Math.sin(1));
+    // //只做了解下面四个
+    // console.log(Math.cos(90)); //正弦
+    // console.log(Math.cos(90));//余弦
+    // console.log(Math.tan(90));//正切
+
+
+
+    //Date对象
+    // var date = new Date();
+    // console.log(date);//计算机当前时间
+    //通过参数设置指定的时间
+    // var date = new Date(2018,11,5,10,11,12);
+    // console.log(date);
+    // //字符串类型的参数传入方式：
+    // var date = new Date('2011-1-2 10:12:36');
+    // console.log(date);
+    //只需要掌握任意一种即可（转换方法）；
+    //将日期对象转换为毫秒形式（1s=1000ms）(当前时间到1970年一月一日之间的毫秒形式)
+    // console.log(+new Date()); //推荐记住
+    // console.log(date.getTime());
+    // console.log(date.valueOf());
+    // console.log(Date.now());
+    // console.log(Date.parse('2015-1-1'));
+
+
+    //其他方法
+    // var date =new Date();
+    // console.log(date.getFullYear());
+    // console.log(date.getMonth()); //getMonth() 方法可返回表示月份的数字。返回值是 0（一月） 到 11（十二月） 之间的一个整数。
+//注意： 一月为 0, 二月为 1, 以此类推。
+    // console.log(date.getDate());//当月的几号
+    // console.log(date.getDay());//返回某一周的天数周日为0，周一为1
+    // console.log(date.getHours());
+    // console.log(date.getMinutes());
+    // console.log(date.getSeconds());
+    // console.log(date.getMilliseconds());
+
+
+    //写一个函数格式化日期对象
+    //期望得到"2017-1-1 10:8:3"这样的格式
+    // function gshDate(date) {
+    //     return date.getFullYear() + '-' + (date.getMonth()+1)+'-'+date.getDate() +' '+date.getHours() +':' + date.getMinutes() +':'+date.getSeconds();
+    // }
+    // console.log(gshDate(new Date()));
+    //计算两个时间的时间差
+    // var date = new Date('2018-09-21');
+    // var date1 = new Date('2022-11-25');
+    // console.log(date1-date);//得到的结果还是毫秒数
+    // var date = new Date('2018-03-01');//加横框的事件要加引号
+    // console.log(date);
+    // var date1 =new Date(2018,3,1);
+    // console.log(date);
+
+
+    //Array对象的基本操作方法
+    // var arr =[1,2,3];
+    // console.log(arr.push('a'));//在数组的末尾添加元素。返回值为新数组的长度
+    // console.log(arr);
+
+
+    // var arr = [1,2,3,'a'];
+    // console.log(arr.pop());//从数组的末尾删除一个元素，返回值为删除的元素
+    // console.log(arr.pop());
+    // console.log(arr);
+
+    
+    // var arr =[1,2,3,4];
+    // console.log(arr.unshift('abc'));//在数组的开始位置添加一个元素，返回值为新数组的长度
+
+
+    // var arr = [1,2,3,4,5];
+    // // console.log(arr);
+    // console.log(arr.shift());//在数组的开始位置删除一个元素，返回值为删掉的元素
+    // console.log(arr);
+
+    //练习
+    //将数组中的第一个元素移到数组的末尾
+    // var arr =[1,2,3,4,5];
+    // console.log(arr);
+    // arr.push(arr.shift());
+    // console.log(arr);
+    //将数组的最后一个元素添加到数组的开始位置
+    // var arr = [2,3,4,5,6,1];
+    // console.log(arr);
+    // arr.unshift(arr.pop());
+    // console.log(arr);
+    
+
+    //数组的其他方法
+    //1 arr.concat 用于进行数据的连接  不改变原数组 返回值是返回新的数组
+    // var arr = [1,2,3,4];
+    // // var result = arr.concat(100,200);
+    // var result = arr.concat([5,6]);
+    // console.log(arr);
+    // console.log(result);
+    // console.log(arr.push([5,6]));
+
+
+    //slice() 对数组指定的元素进行拷贝操作
+    //参数一：拷贝起始位置的索引值
+    //参数二：草被结束位置的索引值
+    //返回值：为拷贝元素组成的数组
+    // var arr = ['a','b','c','d','e','f'];
+    // console.log(arr.slice());//不传参数默认拷贝全部元素
+    // console.log(arr.slice(1));//传一个参数，从开始位置索引拷贝到最后
+    // console.log(arr.slice(1,5));//传二个参数，从开始位置拷贝到最后拷贝的索引位置的索引；返回值为开始位置拷贝的元素到拷贝结束位置的前一个元素；
+
+
+
+    //较常用的为：删除数组中指定的元素，向数组中指定的位置添加元素
+    //设置一个参数:是指数组中要删除元素的索引位置开始删除元素到最后全部删除(截取得起始位置的索引值)
+    //设置两个参数：是指数组中要删除元素的索引值和删除元素的个数（截取的个数）
+    //参数为空的话，则返回结果显示原数组的元素
+    //后续参数：用于向截取位置添加参数
+    // arr.splice(); // 显示原数组的元素 - - 没有参数
+    // console.log(arr);
+    // console.log(arr);
+    // arr.splice(3);    //从数组中要删除元素的索引位置开始删除元素到最后全部删除（从指定位置截取到数组的最后）
+    // console.log(arr);
+    // console.log(arr);   
+    // arr.splice(2,1); // 设置两个参数是指数组中要删除元素的索引值和删除元素的个数（在指定索引位置指定个数元素）
+    // console.log(arr); //
+    // console.log(arr);
+    // arr.splice(1,2,110,119,120);  //修改数组的内容
+    // console.log(arr);
+    // console.log(arr);
+    // // arr.splice(1,0,110,119,120); //不删除直接添加元素在数组中，即第二个参数为0；
+    // arr.join(); 
+    // console.log(arr);
+    // var arr = ['a','b','c','c','d','e','f','c'];
+    // var indexArr = [];
+    // var index = arr.indexOf('c');
+    // indexArr.push(index);
+    // while(arr.indexOf('c',index+1) !== -1) {
+    //     index=arr.indexOf('c',index+1);
+    //     indexArr.push(index);
+    // }
+    // console.log(indexArr);
+    // var arr = [1,22,4,66,88,2,3,5,7];
+    // arr.sort(function (a,b) {
+    //     return b-a;
+    // });
+    // console.log(arr);
+    // arr.sort(function (a,b) {
+    //     return a-b;
+    // });
+    // console.log(arr);
+    // var arr = [12,45,,87,98,232];
+    // for(var i=arr.length-1;i>=0;i--) {
+    //     if(arr[i]>45) {
+    //         arr.splice(i,1);
+    //     }
+    // }
+    // console.log(arr);
+    var arr =[1,2,3,4,5];
+    var result = [];
+    for(var i=0;i<arr.length;1++) {
+        if(result.indexOf(arr[i]) ===-1)
+    }
+    </script>
+</body>
+</html>

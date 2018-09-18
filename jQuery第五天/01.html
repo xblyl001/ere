@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+    这是box
+    	<p>这是P标签</p>
+    	<span>这是span标签</span>
+    	<p>这是P标签</p>
+    	<p>这是P标签</p>
+    </div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+
+
+    $('p').click(function() {
+    	console.log('hrhrhr');
+    });
+  //   	function fun () {
+		// 	console.log('这是box自身的点击事件');
+		// }
+
+		// function fun2 () {
+		// 	console.log('这是p标签的事件-事件委托');
+		// }
+		$('p').off();
+		// $('#box').on('click', fun);
+		// $('#box').on('click', 'p', fun2);
+    </script>
+</body>
+</html>

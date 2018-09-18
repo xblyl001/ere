@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 600px;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #e5e5e5;
+        }
+
+        tbody {
+            text-align: center;
+        }
+
+        tbody td {
+            width: 165px;
+            height: 19px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <table border="1">
+            <thead>
+                <tr id="title">
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // var heads = ["姓名", "科目", "成绩"];
+        // var dates = [
+        //     { "name": "张三1", "subject": "语文1", "score": 99.8 },
+        //     { "name": "张三2", "subject": "语文2", "score": 80.8 },
+        //     { "name": "张三3", "subject": "语文3", "score": 70.8 },
+        //     { "name": "张三4", "subject": "语文4", "score": 100 },
+        //     { "name": "张三5", "subject": "语文5", "score": 60 },
+        //     { "name": "张三6", "subject": "语文6", "score": 70 },
+        //     { "name": "张三7", "subject": "语文7", "score": 89.8 }
+        // ];
+        // var box = document.getElementById("box");
+        // var table = document.createElement("table");
+        // table.border = 1;
+        // var thead = crt("thead",table);
+        // var tr = crt("tr",thead);
+        // var th;
+        // for (var i = 0; i < heads.length;i++) {
+        //     crt("th",tr).innerText = heads[i];
+        // }
+        // var tbody = crt("tbody",table);
+        // var k, td, link;
+        // for (i =0; i < dates.length; i++) {
+        //     tr = crt("tr",tbody);
+        //     for(k in dates[i]) {
+        //         crt("td",tr).innerText = dates[i][k];
+        //     }
+        // }
+        // box.appendChild(table);
+        // function crt(tagName,targetEle) {
+        //     var tag = document.createElement(tagName);
+        //     targetEle.appendChild(tag);
+        //     return tag;
+        // }
+        // var heads = ["姓名", "科目", "成绩"];
+        // var dates = [
+        //     { "name": "张三1", "subject": "语文1", "score": 99.8 },
+        //     { "name": "张三2", "subject": "语文2", "score": 80.8 },
+        //     { "name": "张三3", "subject": "语文3", "score": 70.8 },
+        //     { "name": "张三4", "subject": "语文4", "score": 100 },
+        //     { "name": "张三5", "subject": "语文5", "score": 60 },
+        //     { "name": "张三6", "subject": "语文6", "score": 70 },
+        //     { "name": "张三7", "subject": "语文7", "score": 89.8 }
+        // ];
+        // var box = document.getElementById("box");
+        // var table = document.createElement("table");
+        // table.border = 1;
+        //  var thead = crt("thead",table);
+
+        //  var tr = crt("tr", thead);
+
+        //  var th;
+        //  for(var i =0;i < heads.length;i++ ) {
+        //      crt("th",tr).innerText = heads[i];
+        //  }
+        //  var tbody = crt("tbody",table);
+        //  var k,td,link;
+        //  for(i = 0;i < dates.length;i++){
+        //      tr = crt("tr",tbody);
+        //      for (k in dates[i]) {
+        //          crt("td",tr).innerText = dates[i][k];
+        //      }
+        //  }
+        //  box.appendChild(table);
+        //  function crt(tagName,targetEle) {
+        //      var tag = document.createElement(tagName);
+        //      targetEle.appendChild(tag);
+        //      return tag;
+        //  }
+        var heads = ["姓名", "科目", "成绩"];
+        var datas = [
+            { "name": "张三1", "subject": "语文1", "score": 99.8 },
+            { "name": "张三2", "subject": "语文2", "score": 80.8 },
+            { "name": "张三3", "subject": "语文3", "score": 70.8 },
+            { "name": "张三4", "subject": "语文4", "score": 100 },
+            { "name": "张三5", "subject": "语文5", "score": 60 },
+            { "name": "张三6", "subject": "语文6", "score": 70 },
+            { "name": "张三7", "subject": "语文7", "score": 89.8 }
+        ];
+        var title = document.getElementById('title');
+        var tbody = document.getElementById('tbody');
+        for(var i = 0; i < heads.length;i++) {
+            var th = document.createElement('th');
+            th.innerText = heads[i];
+            title.appendChild(th);
+        }
+        for(var i = 0; i < heads.legth;i++) {
+            var th = document.createElement('th');
+            th.innerText = heads[i];
+            title.appendChild(th);
+        }
+        for(i = 0; i< datas.length;i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            for(var k in datas[i]) {
+                var td = document.createElement('td');
+                tr.appendChild(td);
+                td.innerText= datas[i][k];
+            }
+        }
+    </script>
+</body>
+
+</html>

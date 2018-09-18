@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        $(function() {
+            //取消默认事件效果
+            // $('a'). on('click',function (e) {
+            //     e.preventDefault();
+            //     return false;
+            //阻止事件的传播
+            $('#box').on('click','a',function () {
+                console.log('这是a标签');
+            });
+            $('a').on('click',function (e) {
+                return false;
+                e.preventDefault();
+                e.stopPropagation();
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

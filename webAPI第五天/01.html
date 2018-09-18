@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    
+    <script>
+        var box = document.getElementById('box');
+		// var text = document.getElementById('text');
+		// text.onclick = function () {
+		// 	console.log('这是点击事件');
+		// };
+        // box.innerHTML= 
+        // '<div><p class="text colorRed"></p></div>\
+        // <div><p class="text fl"></p><span><a href="#">这是a标签</a></span></div>';
+        // console.log(innerHTML);
+        // box.innerHTML += '这是新内容';
+        console.time('innerHTML');
+
+        // console.time('innerHTML');
+        // var str ='';
+        for (var i = 0;i< 1000; i++) {
+            // str += '<div></div>';
+            box.innerHTML='<div></div>';
+        }
+        // box.innerHTML =str;
+        console.timeEnd('innerHTML');
+    </script>
+</body>
+</html>

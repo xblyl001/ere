@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* #box1 {
+            width: 120px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        #box2 {
+            width: 120px;
+            height: 120px;
+            border: 1px solid skyblue;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <div id="box1">
+        <p>我是box1的p</p>
+        <h4>我是box1的h4</h4>
+        <span>我是box1的sp</span>
+    </div>
+    <div id="box2">
+        <div>我是box2的div</div>
+        <i>我是box2的i</i>
+    </div>
+    <script>
+        var box2 = document.getElementById("box2");
+        var box1 = document.getElementById("box1");
+        box1.appendChild(box2);
+    </script> -->
+    <ul>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+    </ul>
+    <script>
+        var ul = document.getElementById("list");
+        var li = document.getElementById("li");
+        li.innerHTML = "这是一个li";
+        ul.insertBefore(li,ul.children[0]);
+    </script>
+</body>
+</html>

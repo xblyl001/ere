@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+ t   <script>
+        function People (name, age) {
+			this.name = name;
+			this.age = age;
+		}
+		People.prototype.sayHi = function () {
+			console.log('你好，我是' + this.name);
+		};
+        
+
+		function Student (name, age, school) {
+
+			this.name = name;
+			this.age = age;
+			this.school = school;
+		}
+		Student.prototype.sayHi = function () {
+			console.log('你好，我是' + this.name);
+		};
+		Student.prototype.study = function () {
+			console.log('每天代码1w行');
+		};
+
+		var p1 = new People('jack', 18);
+		var s1 = new Student('rose', 21, '传智播客');
+		console.log(s1.name, s1.age, s1.school)
+        
+        // fun('name',20)
+        // var obj = {name : 'jiff' };
+        // fun.call(obj,'rose',28);
+    </script>
+</body>
+</html>

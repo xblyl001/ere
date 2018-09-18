@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var foo = 1;
+        (function () {
+            console.log(foo);
+            var foo = 2;
+            console.log(foo);
+        })();
+    //    function Preson (name,age) {
+    //        this.type = 'human';
+    //        this.name = name;
+    //        this.age = age
+    //    } 
+       
+    //    function Student (name,age) {
+    //        //借用构造函数继承性成员
+    //        Preson.call(this,name,age)
+    //    }
+    //    var s1 = new Student('张三',18)
+       
+    //    console.log(s1)
+
+    //    console.log(s1.type,s1.name,s1.age) // => human 张三 18
+    //声明
+    // function sayHi() {
+    //     console.log("很好玩吗？");
+    // }
+    // //调用
+    // sayHi();
+    //匿名函数
+    // (function fn () {
+    //     alert("很好玩吗？");
+    // }) ();
+    </script>
+</body>
+</html>

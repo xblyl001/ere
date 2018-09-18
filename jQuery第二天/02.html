@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+	<script>
+	var obj = {
+				name : 'jack',
+				age : 18,
+				getName : function () {
+					// 在方法内使用this指向当前对象obj
+					return this.name;
+				},
+				setName : function (value) {
+					this.name = value;
+					// 链式编程操作利用了设置操作不需要返回值的特点，给方法设置return this
+					return this;
+				},
+				setAge : function (value) {
+					this.age = value;
+					return this;
+				}
+			};
+			console.log(obj.setName('rose')).setAge(20).
+			console.log(obj.getName());
+		// #('list2>li:even').text('这是索引值为偶数的li的内容');
+	</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  body {
+    background: #ccc;
+  }
+  
+  label {
+    width: 40px;
+    display: inline-block;
+  }
+  
+  span {
+    color: red;
+  }
+  
+  .container {
+    margin: 100px auto;
+    width: 400px;
+    padding: 50px;
+    line-height: 40px;
+    border: 1px solid #999;
+    background: #efefef;
+  }
+  
+  span {
+    margin-left: 30px;
+    font-size: 12px;
+  }
+  
+  .wrong {
+    color: red
+  }
+  
+  .right {
+    color: green;
+  }
+  
+  .strengthLv0 {
+    height: 6px;
+    width: 120px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+  
+  .strengthLv1 {
+    background: red;
+    height: 6px;
+    width: 40px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+  
+  .strengthLv2 {
+    background: orange;
+    height: 6px;
+    width: 80px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+  
+  .strengthLv3 {
+    background: green;
+    height: 6px;
+    width: 120px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+</style>
+<body>
+<div class="container">
+  <label>密码</label>
+  <input type="text" id="ipt" maxlength="16">
+  <div class="pass-wrap">
+    <em>密码强度：</em>
+    
+    <em id="strength"></em>
+    
+    <div id="strengthLevel" class="strengthLv0"></div>
+  </div>
+</div>
+<script>
+  // // 通过效果观察，由于需要进行内容获取，使用keyup事件
+
+  // // 1 获取元素
+  // var ipt = document.getElementById('ipt');
+  // var strength = document.getElementById('strength'); // 显示强度文字
+  // var strengthLevel = document.getElementById('strengthLevel'); // 显示强度等级条
+  // var arr = ['', '弱', '中', '强'];
+
+  // // 2 设置keyup事件
+  // ipt.onkeyup = function () {
+  //   // 从步骤4中得来，书写在上下均可，放在上面好一些，不需要检测了。
+  //   if (this.value.length < 6) {
+  //     strengthLevel.className = 'strengthLv0';
+  //     strength.innerText = '';
+  //     return;
+  //   }
+
+  //   // 3 检测，本次输入得内容中字符得种类个数
+  //   var count = 0;
+  //   if (/\d/.test(this.value)) {
+  //     count++;
+  //   } 
+  //   if (/[a-z]/.test(this.value)) {
+  //     count++;
+  //   }
+  //   if (/[A-Z]/.test(this.value)) {
+  //     count++;
+  //   }
+
+  //   // 根据统计得种类个数，设置显示内容
+  //   strengthLevel.className = 'strengthLv' + count;
+  //   strength.innerText = arr[count];
+
+  //   // 4 检测本次输入得字符个数,如果不足6位，将内容还原即可
+  //   /*if (this.value.length < 6) {
+  //     strengthLevel.className = 'strengthLv0';
+  //     strength.innerText = '';
+  //   }*/
+  // };
+
+
+    //通过观察，由于需要进行内容获取，使用keyup事件
+
+    //获取元素
+    var ipt = document.getElementById('ipt');
+    var strength = document.getElementById('strength');
+    var strengthLevel = document.getElementById('strengthLevel');
+    var arr = ['','弱','中','强'];
+    //事件操作
+    ipt.onkeyup = function() {
+      //检测，本次输入的内容中字符的种类个数
+      var count = 0;
+      if (/\d/.test(this.value)) {
+        
+         count++;
+      } 
+      if (/[a-z]/.test(this.value)) {
+         count++;
+      } 
+      if (/[A-Z]/.test(this.value)) {
+         count++;
+      }
+      Console.log(count);
+    };
+</script>
+</body>
+</html>

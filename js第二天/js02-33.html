@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var userName = prompt('请输入你的大名');
+        var money = 0;
+        var isOpen = true;
+        while (isOpen) {
+            var mes = userName + '：请选择你要办理的业务\n'+
+                      '1.存款\n' +
+                      '2.取款\n' +
+                      '3.查余额\n' +
+                      '4.退出';
+            var num =prompt(mes);
+
+            switch (num) {
+                 case '1':
+                    var temp =parseInt(prompt('请输入存款金额'));
+                    money += temp;
+                    alert('存款成功， 您的存款金额为：' + money)
+                    break;
+                 case '2':
+                    var temp =parseInt(prompt('请输入取款金额'));
+                    money += temp;
+                    alert('取款成功， 您的余额为：' + money)
+                    break;
+                case '3':
+                    alert('您的余额为：' + money)
+                    break;
+                case '4':
+                    alert('您已成功退出，欢迎再次使用！' )
+                    isOpen = false;
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

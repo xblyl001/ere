@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      margin: 0 auto;
+      padding: 0px;
+      font-size: 12px;
+      background: url(images/bg.gif) repeat center 36px;
+      text-align: center;
+      background-color: #c30230;
+    }
+
+    #content {
+      margin: 0 auto;
+      width: 960px;
+      background: url(images/content_bg.jpg) no-repeat left top;
+      height: 627px;
+    }
+
+    #content .tip1,
+    #content .tip2,
+    #content .tip3,
+    #content .tip4,
+    #content .tip5,
+    #content .tip6,
+    #content .tip7,
+    #content .tip8 {
+      position: absolute;
+      width: 227px;
+      left: 200px;
+      top: 100px;
+    }
+
+    #content .tip1 .tip_h {
+      background: url(images/tip1_h.gif) no-repeat left top;
+    }
+
+    #content .tip1 .tip_h,
+    #content .tip2 .tip_h,
+    #content .tip3 .tip_h,
+    #content .tip4 .tip_h,
+    #content .tip5 .tip_h,
+    #content .tip6 .tip_h,
+    #content .tip7 .tip_h,
+    #content .tip8 .tip_h {
+      width: 227px;
+      padding-top: 45px;
+      height: 23px;
+      text-align: left;
+      cursor: move;
+    }
+
+    #content .tip1 .tip_c {
+      background: url(images/tip1_c.gif) repeat-y;
+    }
+
+    #content .tip1 .tip_c,
+    #content .tip2 .tip_c,
+    #content .tip3 .tip_c,
+    #content .tip4 .tip_c,
+    #content .tip5 .tip_c,
+    #content .tip6 .tip_c,
+    #content .tip7 .tip_c,
+    #content .tip8 .tip_c {
+      width: 200px;
+      padding-left: 12px;
+      padding-right: 15px;
+      min-height: 40px;
+      text-align: left;
+      line-height: 20px;
+      max-height: 160px;
+      word-wrap: break-word;
+      word-break: break-all;
+      overflow: hidden;
+    }
+
+    #content .tip1 .tip_f {
+      background: url(images/tip1_f.gif) no-repeat left top;
+    }
+
+    #content .tip1 .tip_f,
+    #content .tip2 .tip_f,
+    #content .tip3 .tip_f,
+    #content .tip4 .tip_f,
+    #content .tip5 .tip_f,
+    #content .tip6 .tip_f,
+    #content .tip7 .tip_f,
+    #content .tip8 .tip_f {
+      width: 227px;
+      height: 53px;
+      padding-top: 20px;
+    }
+
+    #content .close,
+    #content .close2 {
+      float: left;
+      font-size: 12px;
+      cursor: pointer;
+      color: #000000;
+    }
+
+    .clr {
+      clear: both;
+      overflow: auto;
+      display: block;
+      height: 0px;
+    }
+
+    #content .icon {
+      float: left;
+      width: 35px;
+      padding-left: 15px;
+      height: 35px;
+      text-align: center;
+    }
+
+    #content .name {
+      float: right;
+      padding-right: 15px;
+      text-align: right;
+      font-size: 14px;
+      line-height: 35px;
+      color: #C0F;
+    }
+
+    #content .num {
+      float: left;
+      padding-left: 7px;
+      width: 195px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    <div class="tip1" id="cc">
+      <div class="tip_h" title="双击关闭纸条">
+        <div class="num">第[49568]条 2016-02-17 22:51:52</div>
+        <div class="close" title="关闭纸条">×</div>
+        <div class="clr"></div>
+      </div>
+      <div class="tip_c">
+        赶紧毕业迎娶白富美
+      </div>
+      <div class="tip_f">
+        <div class="icon">
+          <img src="images/bpic_1.gif" alt="" title="">
+        </div>
+        <div class="name">成真的人</div>
+        <div class="clr"></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+<script>
+  var zIndex = 0;
+  var data = ['毕业后,日薪过千', '努力让自己过的更好', '变成自己喜欢的样子', '赶紧毕业迎娶白富美', '2018新年愿望、好好锻炼 把自己练的棒棒的 身体健康 吃嘛嘛香。', '2018年我的新年愿望是、这一年你可以单身，这样我就可以追你了。希望可以实现。', '人生最大的愿望就是；吃一碗广告里的泡面。', '2018年最后一个月最后一个愿望：用我身上的十斤肉换个男朋友。', '2018新年愿望、 我希望能找个女朋友……鹅，算了。还是希望世界和平吧。']
+  //生成很多个纸条，读取数组的内容  放到字条上
+  var tip = document.getElementById('cc');
+  var content = document.getElementById('content');
+  var tip_c  = document.getElementsByClassName('tip_c');
+  var tip_h = document.getElementsByClassName('tip_h');
+  for (var i = 0; i < 10; i++) {
+    var tips = tip.cloneNode(true);
+    tips.id = 'cc'+i;
+    content.appendChild(tips);
+    // 先去找数组的索引
+    var index = parseInt(Math.random()*data.length);
+    // console.log(index)
+    tip_c[i].innerHTML = data[index]//给纸条设置随机内容
+    //第一步完成 用到的知识点  克隆节点   追加节点   随机数  数组索引
+    // console.log(tips)
+    //第二步  生成随机位置     x    (200,900)    y(0,450)
+    var x = parseInt(Math.random()*700+200);
+    var y = parseInt(Math.random()*450);
+    tips.style.top = y +'px';
+    tips.style.left = x+'px';
+    tips.onclick = function(){
+      zIndex++;
+      this.style.zIndex = zIndex;
+    }
+    // 第三步： 通过点击事件该变当前层级
+    tip_h[i].ondblclick = function(){
+   var tips = this.parentNode;
+   content.removeChild(tips)
+    }
+  }
+</script>
+
+</html>

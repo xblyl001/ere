@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(a)
+        // var a = 10;
+        //此时打印时将var提前预解析,打印的结果为undefined
+        // var a;
+        // console.log(a);
+        // a=10;//将函数的声明提前了，提前到整个作用域的最上面
+        // fn();
+        // function fn() {  
+        //  alert(1);   
+        // };
+        // //此时将函数声明提前解析了，解析后的结果为
+        // function fn() {
+        //     alert(1);
+        // };
+        // fn();     //打印的结果为弹出框显示数字1
+        // var obj ={
+        //     name:'zs',
+        //     age : 18,
+        //     sayHi:function () {
+        //         console.log('这是sayHi');
+        //     }
+        //  };
+        // for(var k in obj) {
+        //     if(typeof obj[k] ==='function') {
+        //             obj[k]();
+        //         }else {
+        //             console.log(obj[k]);
+        //         }
+        // }
+            // var date = new Date();
+            // console.log(date.getFullYear() + '-' + date.getMonth() + '-' +  date.getDay() +' '+ date.getHours()+':' + date.getMinutes() + ':'+ date.getSeconds());
+            // var arr = [1,2,3];
+            // arr.push(arr.shift());
+            // console.log(arr);
+        //    function Min() {
+        //     // 假设一个最小值
+        //     var min = arguments[0];
+        //     for (var i = 1;i < arguments.length; i++) {
+        //         if (arguments[i] < min) {
+        //             arguments[i] = min;
+        //         }
+        //     }
+        //     return min;
+        // }
+        // console.log(Min(1, 3, 5, 8, 9));
+        var date = new Date('2018-03-01');
+        console.log(date);
+        var date1 = new Date(2018,3,1);
+        console.log(date1);
+
+    </script>
+</body>
+</html>

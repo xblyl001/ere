@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //- 求1-n之间所有数的和
+        
+        // function getsum (n) {
+        //     var sum =0;
+        //     for(var i=1;i<=n;i++) {
+        //         sum +=i;
+        //     }
+        //     return sum;
+        // }
+        // console.log(getsum(100));
+        //- 求n - m之间所有数额和
+        // function getsum (n,m) {
+        //     var sum =0;
+        //     for(var i=n;i<=m;i++) {
+        //         sum +=i;
+        //     }
+        //     console.log(sum);
+        // }
+        // getsum(1,100);
+        //- 圆的面积
+        //圆的半径：r
+        //圆的面积：r*r*
+        // var r = 9;
+        // // console.log(r*r*Math.PI);
+        // function yMJ (r) {
+        //     return r * r * Math.PI;
+        // }
+        // console.log(yMJ(9));
+        //- 求2个数中的最大值
+        // var num1 = 12, num2 = 23;
+        // // console.log(num1>num2?num1:num2);
+        // function getmax (num1,num2) {
+        //     return num1>num2?num1:num2;
+        // }
+        // console.log(getmax(12,23));
+        //- 求3个数中的最大值
+        // function getmax (num1,num2,num3) {
+        //     var max= num1>num2?num1:num2;
+        //     return max>num3?max:num3;
+        // }
+        // console.log(getmax(12,23,4));
+        //- 判断一个数是否是素数
+        //即能被自身和1整除的数
+        function isZS (num) {
+            //获取1-sum间的所有值
+            for(var i = 2;i<num;i++) {
+                //如果有任意一个值可以被整除sum,说明不是质数
+                if(num % i ===0) {
+                    return false;
+                }
+            }
+            //true说明是质数
+            return true;
+        }
+        //注意：代码中虽有多个return但不代表函数可以有多个返回值。
+        //因为return会结束函数进行，所以一个函数只会有一个返回值
+        console.log(isZS(23));
+        console.log(isZS(9));
+        console.log(isZS(88));
+        console.log(isZS(0));
+        console.log(isZS(6));
+        console.log(isZS(''));
+        console.log(isZS(null));
+        console.log(isZS(undefined));
+    </script>
+</body>
+</html>

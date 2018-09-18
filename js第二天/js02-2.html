@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 等腰三角形
+        // for(var j = 1; j <= 9; ++j) {
+        //     for(i = 1; i < 10 - j; ++i ) {
+        //          document.write("&nbsp;");
+        //      }
+        //     for(i = 1; i <= j; ++i) {
+        //         document.write("★");
+        //      }
+        //         document.write("<br>");
+        // }
+        for(var j = 1; j <= 9; ++j) {
+            for(i = 1; i < 10 - j; ++i) {
+                document.write("◆");
+            }
+            for(i = 1; i <= j; ++i) {
+                document.write("▼");
+            }
+            document.write("<br>");
+        }
+        for(var j = 1; j <= 9; ++j) {
+            for(i = 1; i < 10 - j; ++i) {
+                document.write("&nbsp;");
+            }
+            for(i = 1; i <= j; ++i) {
+                document.write("☆")
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

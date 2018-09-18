@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* li {
+            list-style: none;
+            float: left;
+        } */
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>早餐</li>
+            <li>午餐</li>
+            <li>晚餐</li>
+        </ul>
+    </div>
+   
+    <!-- <ul>
+        <li class="item"><p><span><a href="javascript">这是a</a></span></p></li>
+        <li class="item"><p><span>这也是span</span></p></li>
+        <li><p><a href="#"><span>这是span</span></a></p></li>
+    </ul> -->
+    <script> 
+    var div = document.createElement('div');  //用于进行元素节点的创建
+    // console.log(div);
+    //显示结果为文字会在页面上，标签符号会在控制台显示
+    var box = document.getElementById('box');
+    // box.appendChild(div);
+    // console.time('createElement');
+    //     var box = document.getElmentById('box');
+    //     box.innerHTML = <ul>
+    //     <li class="item"><p><span><a href="javascript">这是a</a></span></p></li>
+    //     <li class="item"><p><span>这也是span</span></p></li>
+    //     <li><p><a href="#"><span>这是span</span></a></p></li>
+    // </ul>;
+//  var arr = ['早餐','午餐','晚餐'];
+    // var ul = document.getElementById('list');
+    // for(var i =0;i<arr.length;i++) {
+    //     var li =document.createElement('li');
+    //     ul.appendChild(li);
+    //     li.innerText = arr[i];
+    // }
+    //当结构复杂时，，采用数组和对象结构设置
+    var arr =[{
+        title:'稀饭包子',
+        yuanjia:'8',
+        xianjia:'5',
+    },
+    {
+        title:'地三鲜馒头',
+        yuanjia:'22',
+        xianjia:'18',
+    },
+    {
+        title:'面条酥饼',
+        yuanjia:'12',
+        xianjia:'8',
+    }];
+    //实际操作时不仅数据对结构有要求，样式对结构也有要求
+    var box =document.getElementById('box');
+    for(var i =0;i<arr.length;i++) {
+        var div =document.createElement('div');
+        box.appendChild(div);
+        //创建标题和两个价格
+        var h6 =document.createElement('h6');
+        h6.innerText =arr[i].title;
+        div.appendChild(h6);
+        var spanl = document.createElement('span');
+        spanl.innerText = arr[i].xianjia;
+        div.appendChild(spanl);
+        var span2 =document.createElement('span');
+        span2.innerText = arr[i].yuanjia;
+        div.appendChild(span2);
+    }
+    </script>
+</body>
+</html>

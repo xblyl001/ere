@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //回调函数：将函数作为另一个函数的参数使用
+        //使用场景：当一个函数中的某些功能代码不确定时，就可以使用函数参数
+        // setInterval(function() {},100);
+        // btn.addEventListener('click',function () {});
+        // function fun (arr, num, str,fn) {
+        //     console.log(arr,num,str,fn);
+        // }
+        // fun ([1,2,3,],100,'abc',function() {
+        //     console.log('这是传入的函数参数')
+        // });
+        //回调函数：函数作为另一个函数参数的使用
+        //使用场景：当一个函数的某些功能代码不确定时，就可以使用函数参数
+        // function fun (arr, num, str, fn) {
+        //     console.log(arr, num,str,fn);
+        // }
+        // fun([3,8,5,],100,'abc',function(){
+        //     console.log('这是传入的函数参数')
+        // });
+        //回调函数：将函数作为另一个函数的参数的使用
+        //使用场景：当函数中的一些功能代码不确定的时候，就可以使用函数参数
+        function fun (arr,num,str,fn) {
+            console.log(arr,num,str,fn);
+        }
+        fun ([3,4,7,],100,'abc',function () {
+            console.log('这是传入的新函数参数')
+        });
+    </script>
+</body>
+</html>

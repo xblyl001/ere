@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 编写代码实现根据数据创建表格： 
+        要求:  
+            1. 使用数据 
+            { 
+                theadDatas: ["姓名", "年龄", "性别"], 
+                tbodyDatas: [ 
+                  {name: "张三", age: 22, sex: "男"}, 
+                  {name: "小蝉", age: 17, sex: "女"}, 
+                  {name: "元芳", age: 26, sex: "男"}, 
+                  {name: "小红", age: 12, sex: "女"}, 
+                  {name: "赵六", age: 48, sex: "男"}, 
+                ] 
+              } 
+            其中theadDatas数组中的元素个数决定了表头中th的个数，tbodyDatas数组中元素的个数决定了tbody中的数据行数，每个对象中的属性又决定对应行的单元格个数。 
+            2. 使用document.write()方法将效果打印在页面中(可以分多次打印，也可以拼接所有内容后进行一次打印。) 
+            3. 避免多次重复访问某个对象的某个属性 
+            4. 避免变量的重复声明 
+            5.  对数组和对象分别使用for循环和forin的遍历方式 -->
+    <script>
+        var theadDatas = {
+            theadDatas: ["姓名", "年龄", "性别"],
+            tbodyDatas: [
+                { name: "张三", age: 22, sex: "男" },
+                { name: "小蝉", age: 17, sex: "女" },
+                { name: "元芳", age: 26, sex: "男" },
+                { name: "小红", age: 12, sex: "女" },
+                { name: "赵六", age: 48, sex: "男" },
+            ]
+        };
+        var theadDatas = tableDatas.theadDatas;
+        var tbodyDatas = tableDatas.tbodyDatas;
+        var i, k, tbds;
+        
+        document.write("<table border='1' style='border-collapse: collapse;'><thead><tr>");
+        for (i = 0; i < theadDatas.length; i++) {
+            document.write("<th>" + theadDatas[i] + "</th>")
+        }
+        document.write("</tr></thead><tbody>");
+        for (i = 0; i < tbodyDatas.length; i++) {
+            tbds = tbodyDatas[i];
+            document.write("<tr>");
+            for (k in tbds) {
+                document.write("<td>" + tbds[k] + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</tbody></table>");
+
+    </script>
+
+</body>
+
+</html>

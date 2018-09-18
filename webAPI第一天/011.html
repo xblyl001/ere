@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <a id="link" href="03根据标签名获取元素的方式.html">点我</a> -->
+    <div id="box"></div>
+    <script>
+    //     var link = document.getElementById('link');
+    //     link.onclick = function () {
+    //         alert('这是a的点击事件');
+    //         // return false;
+    // };
+    var box = document.getElementById('box');
+    box.onmouseover = function () {
+        console.log('移入');
+        this.style.backgroundColor='red';
+    };
+     box.onmouseout = function () {
+        console.log('移出');
+        this.style.backgroundColor='';
+    };
+    </script>
+    
+</body>
+</html>

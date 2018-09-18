@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <div id="box"></div>
+    <ul>
+        <li><p><span>这是p里面的span</span></p></li>
+        <li><p><a href="#"><span>这是a里面的span</span></a></p></li>
+        <li><h4><span>这是h4里面的span</span></h4></li>
+        <li><p><span><h6><a href="#">这是h6里面的a</a></h6></span></p></li>
+    </ul>
+</head>
+<body>
+    <!-- innerMTML
+    优点:指定位置创建元素
+        创建复杂结构方便
+        在HTML中写好创建的结构，将HTML中准备好的结构拷入js中，设置为字符串（字符串的标识符采用单单引号）
+        对换行进行处理，使用转义符 -->
+
+    <script>
+        // var box =document.getElementById('box');
+        // box.innerHTML = '<ul>\
+        // <li><p><span>这是p里面的span</span></p></li>\
+        // <li><p><a href="#"><span>这是a里面的span</span></a></p></li>\
+        // <li><h4><span>这是h4里面的span</span></h4></li>\
+        // <li><p><span><h6><a href="#">这是h6里面的a</a></h6></span></p></li>\
+        // </ul>';
+        box.innerHTML = <ul> <li><p><span>这是p里面的span</span></p></li> <li><p><a href="#"><span>这是a里面的span</span></a></p></li> <li><h4><span>这是h4里面的span</span></h4></li> <li><p><span><h6><a href="#">这是h6里面的a</a></h6></span></p></li></ul>
+
+        // var arr = ['早餐','中餐','晚餐'];
+        // var ul = document.getElementById('list');
+        // for(var i =0;i<200;i++) {
+        //     var li = document.createElement('li');
+        //     ul.appendChild(li);
+        //     li.innerText = arr[i];
+        // }
+        // var arr = [{
+        //     title:'红嫂狮子头',
+        //     yuanjia : 25,
+        //     xianjia: 18
+        // },
+        // {
+        //     title:'蚂蚁上树',
+        //     yuanjia : 18,
+        //     xianjia: 12
+        // },
+        // {
+        //     title:'地三鲜',
+        //     yuanjia : 20,
+        //     xianjia: 16
+        // }];
+        // var box = document.getElementById('h6');
+        // h6.innerText = arr[i].title;
+        // div.appendChild(h6);
+        // var span1 = documet
+    </script>
+</body>
+</html>

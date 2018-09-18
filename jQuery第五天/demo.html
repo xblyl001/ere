@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul li {
+            width: 100%;
+            height: 100%;
+        }
+
+        ol {
+            position: fixed;
+            top: 60px;
+            left: 60px;
+        }
+
+        ol li {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            margin-top: -1px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <!-- 背景的大方块-->
+    <ul>
+        <li>男装</li>
+        <li>女装</li>
+        <li>童装</li>
+        <li>老年装</li>
+        <li>妈咪装</li>
+    </ul>
+    <!-- 左侧的小按钮-->
+    <ol>
+        <li>男装</li>
+        <li>女装</li>
+        <li>童装</li>
+        <li>老年装</li>
+        <li>妈咪装</li>
+    </ol>
+</div>
+<script src="../jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+    	//定义颜色数组
+	    var color = ["pink", "blue", "green", "orange", "purple"];
+	    //大背景
+	    var $lisUl = $('ul>li');
+
+	    $('ol>li').each(function (i, ele) {
+	        $(ele).css('backgroundColor', color[i]);
+	        $lisUl.eq(i).css('backgroundColor', color[i]);
+
+	        //添加点击事件
+	        $(ele).click(function () {
+	        	$('body,html').stop().animate({scrollTop : $('ul>li').eq($(this).index()).position().top}, 500);
+	        });
+	     });
+    });
+
+</script>
+</body>
+</html>

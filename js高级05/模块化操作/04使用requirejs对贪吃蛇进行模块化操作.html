@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#map {
+			width: 800px;
+			height: 600px;
+			background-color: #ccc;
+			position: relative;
+		}
+		#map div {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="score">游戏分数为：0</h1>
+	<div id="map"></div>
+
+	<!-- requirejs的使用方式：
+		1 引入文件
+		2 设置data-main：设置要引入得主模块文件路径，主模块用于保存所有关于当前页面的代码
+				- 页面加载后，data-main中得代码会自动被执行
+				- data-main得属性值默认为.js后缀，所以可写可不写
+		3 主模块使用require()，声明依赖和模块代码，其他模块使用define()设置，声明依赖和模块代码，
+				被其他模块依赖得模块还需要使用return返回功能，引入模块时需要设置对应得参数接收
+	 -->
+	<script src="require.js" data-main="js/main.js"></script>
+
+</body>
+</html>

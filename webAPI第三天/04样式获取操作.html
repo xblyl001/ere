@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 120px;
+            height: 120px;
+            background-color: red;
+        }
+        #box {
+            width: 200px;
+            height:130px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="width:100px;">这是div</div>
+    <script>
+        var box =document.getElementById('box');
+        //1 style方式不仅可以进行样式设置，换可以进行样式获取，但是只能获取行内样式
+        console.log(box.style.width);//100
+        box.style.height ='200px';
+        console.log(box.style.height);//200
+        //使用style方法获取的非行内元素，结果为'';
+        console.log(box.style.backgroundColor);
+    </script>
+</body>
+</html>

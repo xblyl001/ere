@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+          list-style: none
+        }
+        
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        
+        div {
+          position: relative;
+          width: 1200px;
+          height: 400px;
+          margin: 50px auto;
+          border: 1px solid red;
+          overflow: hidden;
+        }
+        
+        div li {
+          width: 1200px;
+          height: 400px;
+          /*float: left;*/
+          position: absolute;
+        }
+        
+        div ul {
+          width: 1200px;
+        }
+      </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <script>
+          //设置背景图片
+          //设置li的初始显示位置
+          //设置移入移出的效果
+           //前元素与后元素规律：i*100
+           //后续的元素：i*100+ 700
+           //移除时还原默认显示位置
+           //获取元素
+           var box = document.getElementById('box');
+           var lis = box.appendChild[0].Children;
+           //遍历
+           for(i = 0;i < lis.length;i++) {
+               //显示图片的地址
+               lis[i].style.backgroundimage = 'url('+(i+1)+'jpg)';
+           }
+      </script>
+</body>
+</html>

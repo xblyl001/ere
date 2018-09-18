@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        //addElementListener()  添加事件监听（事件监听）
+        //参数一事件类型，没有on
+        //参数二 事件处理程序，函数
+        //可以避免事件的覆盖问题
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click',function () {
+            console.log('这是事件1代码');
+        });
+        function fun () {
+            console.log('这是事件2代码');
+        }
+        btn.addEventListener('click',fun);
+        //移除removeEventListrner()
+        //参数必须与设置时的完全一样（事件处理程序必须是同一函数，采用命名函数即可）
+
+        btn.removeEventListener('click',fun);
+        //上述方法ie9不支持但必须掌握
+    </script>
+</body>
+</html>

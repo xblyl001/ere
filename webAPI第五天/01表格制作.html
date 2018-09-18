@@ -1,0 +1,127 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+   <button id="btn">添加</button>
+    <table border="1">
+        <thead>
+            <tr>姓名</tr>
+            <td></td>
+        </thead>
+        <tbody>
+            <tr>科目</tr>
+            <td></td>
+
+            <tr>成绩</tr>
+            <td></td>
+        </tbody>
+    </table>
+   <script>
+       var btn = document.getElementById('btn');
+   </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    table {
+      width: 600px;
+      cursor: pointer;
+    }
+
+    table td {
+      text-align: center;
+    }
+
+    table th {
+      background-color: blueviolet;
+    }
+
+    table tr {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+<div id="dv">
+  请输入姓名:<input type="text" value=""/><br/>
+  请输入邮箱:<input type="text" value=""/><br/>
+  请输入手机:<input type="text" value=""/><br/>
+  请输入地址:<input type="text" value=""/><br/>
+</div>
+ 
+<input type="button" value="添加" id="btn"/>
+<table border="1" cellpadding="0" cellspacing="0" id="tb">
+  <thead>
+    <tr>
+      <th>姓名</th>
+      <th>邮箱</th>
+      <th>手机</th>
+      <th>地址</th>
+    </tr>
+  </thead>
+  <tbody id="tbd">
+    <tr>
+      <td>小黑</td>
+      <td>xiaohei@126.com</td>
+      <td>19999009090</td>
+      <td>北京</td>
+    </tr>
+  </tbody>
+</table>
+<script>
+    function my$(id) {
+      return document.getElementById(id);
+    }
+    //获取按钮注册点击事件
+    my$('btn').onclick = function () { 
+    var flag = true;
+    //获取每个文本框
+    var txts = my$('dv').getElementsByTagName('input');
+    //确定每一项不为空
+    for (var i = 0; i < txts.length; i++) {
+        if(txts[i].value.length==0){
+          flag = false;
+          break;
+        }
+    }  
+    if(flag){
+       //创建一行
+      var trObj = document.createElement('tr');
+        //把行加入到tbody中
+      my$('tbd').appendChild(trObj);
+      for (var i = 0; i < txts.length; i++) {
+       //遍历文本框的同时创建列
+        var tdObj = document.createElement('td');
+        trObj.appendChild(tdObj);
+        tdObj.innerHTML = txts[i].value;
+      }     
+    }else{
+      alert('请将数据填入完全')
+    }
+    //3.获取table中所有的行,注册鼠标进入和离开的事件
+    var trObjs = my$('tb').getElementsByTagName('tr');
+    
+      for (var i = 0; i < trObjs.length; i++) {
+        trObjs[i].style.backgroundColor = i % 2 == 0 ? 'red' : 'yellow';
+      }
+
+    };
+</script>
+
+</body>
+</html>

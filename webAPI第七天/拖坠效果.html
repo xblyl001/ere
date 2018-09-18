@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(10, 24, 221);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+    </div>
+    <script>//左上角跟随效果
+        var box = document.getElementById('box');
+        // document.onmousemove = function(e) {
+        //     box.style.left = e.clientX + 'px';
+        //     box.style.top = e.clientY + 'px';
+        //     // box.style.left = e.clientX  - box.offsetLeft / 2 + 'px';
+        //     // box.style.top = e.clientY - box.offsetHeight / 2 + 'px';  
+        // };
+        // box.onmouseup  = function (){
+        //     document.onmousemove = null;
+        // 点击鼠标获取元素内部坐标
+        // box.onclick = function (e){
+        //             //鼠标坐标    盒子的距可视区域的左侧和顶部的距离
+        //     var x = e.clientX - box.offsetLeft;
+        //     //鼠标坐标    盒子的距可视区域顶部的距离
+        //     var y = e.clientY- box.offsetTop;
+        //     console.log(x,y)
+        // };
+        // 元素点击后，以点击位置跟随
+        // 点击元素获取鼠标盒子内部的效果
+        // box.onclick = function (e){
+        //             //鼠标坐标    盒子的距可视区域的左侧和顶部的距离
+        //     var x = e.clientX - box.offsetLeft;
+        //              //鼠标坐标    盒子的距可视区域顶部的距离
+        //     var y = e.clientY- box.offsetTop;
+        //     // console.log(x,y);
+        //     // 设置跟随效果
+        //     document.onmousemove = function(e){
+        //         //基本跟随         鼠标坐标  
+        //         box.style.left = e.clientX - x + 'px';
+        //         box.style.top = e.clientY  - y + 'px';
+        //        };
+        //     };
+        // 拖拽效果
+        // onmousedown 鼠标按下 
+        box.onmousedown = function (e) {
+            var x = e.clientX - box.offsetLeft;
+            var y = e.clientY - box.offsetTop;
+            // console.log('x,y');
+            // 鼠标跟随
+
+            document.onmousemove = function (e) {
+                //基本跟随         鼠标坐标  
+                box.style.left = e.clientX - x + 'px';
+                box.style.top = e.clientY - y + 'px';
+            };
+        };
+        box.onmouseup = function () {
+            document.onmousemove = null;
+        };
+    </script>
+</body>
+
+</html>

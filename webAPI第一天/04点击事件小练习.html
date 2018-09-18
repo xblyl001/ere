@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">按钮1</button>
+    <button id="btn2">按钮2</button>
+    <button id="btn3">按钮3</button>
+    <button id="btn4">按钮4</button>
+    <div id="box">我是box</div>
+    <script>
+        var box = id('box');
+        var btn1 = id('btn1');
+        var btn2 = id('btn2');
+        var btn3 = id('btn3');
+        var btn4 = id('btn4');
+        btn1.onclick =function() {
+            box.style.width='200px';
+        };
+        btn2.onclick =function() {
+            box.style.width='200px';
+        };
+        btn3.onclick =function() {
+            box.style.height='200px';
+        };
+        btn4.onclick =function() {
+            box.innerText='我是新的box';
+        };   
+        function id (idName) {
+            return document.getElementById(idName);
+        }
+    </script>
+</body>
+</html>

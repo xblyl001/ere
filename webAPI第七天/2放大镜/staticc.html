@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 350px;
+      height: 350px;
+      margin: 100px;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+
+    .big {
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+      left: 360px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      display: none;
+    }
+
+    .mask {
+      width: 175px;
+      height: 175px;
+      background: rgba(255, 255, 0, 0.4);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      cursor: move;
+      display: none;
+    }
+
+    .small {
+
+      position: relative;
+
+    }
+
+    .aaa {
+      vertical-align: middle;
+    }
+
+    .big {
+      position: relative;
+      top: -350px;
+    }
+
+    .big img {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" id="box">
+    <!--左侧的盒子-->
+    <div class="small">
+      <!--图片-->
+      <img src="images/small.webp" width="350" class="aaa" alt="" />
+      <!--黄色小盒子-->
+      <div class="mask"></div>
+    </div>
+    <!--右侧的盒子-->
+    <div class="big">
+      <!--右侧盒子内的大图片-->
+      <img src="images/big.jpg" width="800" alt="" />
+    </div>
+  </div>
+  <script>
+    // 步骤：
+    //   1 鼠标移入移出显示隐藏盒子(黄盒子和右侧大盒子)
+    //   2 鼠标在左侧盒子中移动时让黄盒子居中跟随
+    //   3 设置黄盒子的运动边界
+    //   4 设置右侧大图的对应运动
+
+    // 实现：
+    //  1 获取元素
+    var box = document.getElementById('box');
+    var smallBox = box.children[0]; // 左侧小盒子
+    var mask = smallBox.children[1]; // 黄盒子
+    var bigBox = box.children[1]; // 右侧大盒子
+    var bigImg = bigBox.children[0]; // 右侧大图
+
+    // 2 设置移入移出效果
+    box.onmouseover = function () {
+      mask.style.display = 'block';
+      bigBox.style.display = 'block';
+    };
+    box.onmouseout = function () {
+      mask.style.display = 'none';
+      bigBox.style.display = 'none';
+    };
+    // 跟随效果
+    smallBox.onmousemove = function (e) {
+      var e = e || window.event;
+      var x = e.clientX - box.offsetLeft - mask.offsetWidth / 2;
+      // offsetTop的大小写
+      var y = e.clientY - box.offsetTop - mask.offsetHeight / 2;
+
+      // 设置边界
+      x = x < 0 ? 0 : x;
+      y = y < 0 ? 0 : y;
+      var maxLeft = smallBox.offsetWidth - mask.offsetWidth;
+      // offsetHeight写成了offsettop了
+      // 缺少单词
+      var maxTop = smallBox.offsetHeight - mask.offsetHeight;
+      // 缺少的代码
+      x=x>maxLeft?maxLeft:x;
+      y=y>maxTop?maxTop:y;
+      
+      // 英文大写改小写
+      mask.style.left = x + 'px';
+      mask.style.top = y + 'px';
+      var biliX = mask.offsetWidth / (bigBox.offsetWidth - 2);
+      // 缺少单词
+      var biliY = mask.offsetHeight / (bigBox.offsetHeight - 2);
+      bigImg.style.left = - x / biliX + 'px';
+      bigImg.style.top = - y / biliY + 'px';
+    };
+  </script>
+</body>
+
+</html>

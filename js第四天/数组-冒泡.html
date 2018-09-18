@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //  给一组数字数组，将该数组中的数据排序（按照从小到大的规则） 冒泡排序
+        // var arr = [56,78,23,65,44,8,0];
+        // for (var j = 0; j < arr.length-1; j++) {
+        //     for (var i = 0; i < arr.length - 1 -j; i++) {
+        //      if (arr[i] > arr[i + 1]) {
+        //         var temp = arr[i];
+        //         arr[i] = arr[i + 1];
+        //         arr[i + 1] = temp;
+        //      }
+        //  }
+        // }
+        // console.log(arr);
+        // var arr = [12,34,65,87,96,85,8];
+        // for(var i = 0;i < arr.length - 1;i++){
+        //     for(var j = 0; j < arr.length - 1 - i;j++ ) {
+        //         if(arr[j] > arr[j + 1]) {
+        //             var temp = arr[j];
+        //             arr[j] = arr[j + 1];
+        //             arr[j + 1] = temp;
+        //         }
+        //     }
+        // }
+        // console.log(arr);
+        var arr =[12,25,36,42,9,67,83];
+        for(var i = 0; i < arr.length - 1; i++) {
+            for(var j= 0; j < arr.length - 1 - i;j++) {
+                if (arr[j] > arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1]
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+        // 统计班级学生就业薪资，计算总薪资 和 平均薪资。
+        // var arr1 =[7000,9000,11000,5000,2000];
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

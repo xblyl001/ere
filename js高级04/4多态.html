@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //多态：在js中很少用 含义：一个功能针对不同的数据进行使用时，呈现的功能是不同的
+        //由于多态是弱类型语言，变量声明使用var,表示不用确定变量的类型。使用多态不适合而且操作较为繁琐，通常不使用。
+        //打印传入的值
+        function fun (value) {
+            //console.log(value);
+            if (typeof value === 'string') {
+                console.log('呵呵呵，这是字符串' + value);
+            } else if (typeof value ==='number') {
+                console.log('这个value和100的和为：'+ (value +100));
+            }
+        }
+        fun(100);
+        fun('abc')
+    </script>
+</body>
+</html>

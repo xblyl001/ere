@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">box
+        <a id="link" href="14模拟拖拽.html">a标签</a>
+    </div>
+    <script>
+        var link = document.getElementById('link');
+        var box = link.parentNode;
+        //取消事件默认事件效果的方法：
+        //return false 常用
+        //e.preventDefault() -了解
+
+        //阻止事件传播的方式（阻止冒泡和捕获）
+        // //e.stoppropagation();  -掌握
+        // link.onclick =function(e) {
+        //     // return false; //取消事件的传播效果，不会显示控制台打印的内容
+        //     e.preventDefault(); //取消事件的传播效果但会继续显示控制台要显示的内容
+        //     console.log('这是a标签的事件代码');
+        //     //阻止事件的传播方式
+        //     e.stopPropagation();//阻止事件的传播方式，但会继续显示控制台要显示的内容    
+        // };
+        //当我们在设置事件时，如果只希望设置触发当前元素不希望触发其父元素时，可以用stopPropegation()
+            box.onclick = function () {
+                console.log('这是box');
+            };
+                
+    </script>
+</body>
+</html>

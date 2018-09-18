@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">我是div里面的box</div>
+    <!-- 事件对象：事件的操作中会有信息我们无法获得，js机制会把这些信息整理好发给我们，由于信息多，采用了一个对象保存后传递，这个对象被称为事件对象 -->
+    <script>
+        var box = document.getElementById('box');
+        box.onclick = function (e) {
+            //接收方式
+            //在程序的参数位置接收
+            //ie中使用window.even
+            console.log(e);
+            // console.log(window.even);     //ie浏览器使用window.even
+            e = e || window.even;  //函数参数默认值的设置方式
+        };
+    </script>
+</body>
+</html>

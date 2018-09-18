@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 300px;
+            height:300px;
+            background-color: pink;
+        }
+        #box2 {
+            width: 200px;
+            height:200px;
+            background-color: skyblue;
+        }
+        #box3 {
+            width: 100px;
+            height:100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        box1
+        <div id="box2">
+            box2
+            <div id="box3">
+                box3
+            </div>
+        </div>
+    </div>
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var box3 = document.getElementById('box3');
+        box1.onclick = function () {
+            console.log('box1');
+        };
+        box2.onclick = function () {
+            console.log('box2');
+        };
+        box3.onclick = function () {
+            console.log('box3');
+        };
+        //通过观察发现，每个元素的事件出发后，可能不仅触发当前元素，花卉触发其他元素事件
+        //事件的默认传递方式为；事件冒泡(从内向外)
+        //当前元素触发后，触发自身事件，并且将事件传递给父元素
+        //如果父元素具有相同类型的事件时，也可以被触发，以此类推
+    </script>
+</body>
+</html>

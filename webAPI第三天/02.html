@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        };
+        #box2 {
+            width: 200px;
+            height: 200px;
+        };
+    </style>
+</head>
+<body>
+    <!-- <select>
+		<option>张三</option>
+		<option id="lisi">李四</option>
+		<option>王五</option>
+	</select>
+	<button id="btn">选中李四</button>
+    <script>
+        var btn = document.getElementById('btn');
+        var lisi = document.getElementById('lisi');
+
+    </script>
+    </script> -->
+    <!-- <input type="text" id="inp" value="华为手机">
+    <script>
+        var inp = document.getElementById('inp');
+        inp.onfocus = function(){
+            if(this.value ==='华为手机'){
+                this.value = ''
+            }
+        };
+        inp.onblur = function(){
+            if(this.value ===''){
+                this.value = '华为手机'
+            }
+        };
+    </script> -->
+<!-- <div id="box">
+    <p>写几个字</p>
+    <button>按钮</button>
+</div>
+<script>
+    var box =document.getElementById('box'); 
+    console.log(box.parentNode);
+    console.log(box.children);
+    console.log(box.firstChild);
+    console.log(box.lastChild);
+    console.log(box.firstElementChild);
+    console.log(box.lastElementChild);
+</script> -->
+
+<!-- <ul>
+    <li>这是li</li>
+    <li>这是li</li>
+    <li id="li">这是li</li>
+    <li>这是li</li>
+</ul>
+<script>
+    var li = document.getElementById('li');
+    console.log(li.nextSibling);
+    console.log(li.nextElementSibling);
+    console.log(li.previousSibling);
+    console.log(li.previousElementSibling);
+</script> -->
+<div id="box1">
+    <p id="text">这是box1中的span</p>
+</div>
+<div id="box2">
+    <span id="span">这是box2中的span</span>
+    <h4>这是box2中的h4</h4>
+</div>
+<button id="btn">按钮</button>
+<script>
+
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+    var text = document.getElementById('span');
+    var span = document.getElementById('text');
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+        box2.appendChild(text);
+    }
+    
+    btn.onclick = function () {
+        box2.insertBefore(text,undefined);
+    }
+</script>
+</body>
+</html>

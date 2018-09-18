@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .th {
+            background-color: blue;
+        }
+        .tb {
+            background-color: pink;
+        }
+        
+    </style>
+</head>
+<body>
+    请输入姓名<input type="text"><br>
+    请输入邮箱<input type="text"><br>
+    请输入手机<input type="text"><br>
+    请输入地址<input type="text"><br>
+    <button id="btn">添加</button><br>
+    <table border="1" cellspadding=0 cell>
+        <thead class="th">
+           <div id="nr">
+                <th>姓名</th>
+                <th>邮箱</th>
+                <th>手机</th>
+                <th>地址</th>
+           </div>
+        </thead>
+        <tbody class="tb">
+            <tr>
+                <td>小黑</td>
+                <td>xiaohei@126.com</td>
+                <td>19999009090</td>
+                <td>北京</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var btn = document.getElementById('btn');
+        var nr = document.getElementById('nr');
+        btn.onclick = function () {
+          for(var i =1; i<=4;i++) {
+              alert('请将数据填入完全');
+          }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    select {
+      width: 150px;
+      background-color: #0099cc;
+    }
+  </style>
+</head>
+<body>
+<!--左边的下拉菜单   multiple：可以让下拉菜单多选 -->
+<select id="leftSel" size="10" multiple="multiple">
+  <option>苹果</option>
+  <option>香蕉</option>
+  <option>西瓜</option>
+  <option>牛油果</option>
+  <option>西红柿</option>
+</select>
+
+<!--四个选择按钮位置-->
+<input type="button" value=">>" id="allRight">
+<input type="button" value="<<" id="allLeft">
+<input type="button" value=">" id="right">
+<input type="button" value="<" id="left">
+
+<!--右边的下拉菜单-->
+<select id="rightSel" size="10" multiple="multiple">
+</select>
+
+<script>
+  // 1 获取元素
+  var leftSel = document.getElementById('leftSel'); // 左侧下拉菜单
+  var rightSel = document.getElementById('rightSel'); // 右侧下拉菜单
+  var leftOpts = leftSel.children; // 左侧所有选项
+  var rightOpts = rightSel.children;//右侧所有选项
+  var rightBtn = document.getElementById('right'); // 右移按钮
+  var leftBtn = document.getElementById('left');//左移按钮
+  var allBtn = document.getElementById('allRight');
+  var aallBtn = document.getElementById('allLeft');
+// 右移
+  rightBtn.onclick = function(){
+    for (var i = leftOpts.length - 1; i>=0;i--) {
+      if(leftOpts[i].selected) {
+        rightSel.appendChild(leftOpts[i]);
+      }
+    }
+  };
+  // 左移动
+  leftBtn.onclick = function(){
+    for (var i = rightOpts.length - 1; i>=0;i--) {
+      if(rightOpts[i].selected) {
+        leftSel.appendChild(rightOpts[i]);
+      }
+    }
+  };
+  // 右全移
+  allBtn.onclick = function(){
+    for (var i = leftOpts.length - 1; i>=0;i--) {
+      // if(leftOpts[i].selected) {
+        rightSel.appendChild(leftOpts[i]);
+      // }
+    }
+  };
+  aallBtn.onclick = function(){
+    for (var i = rightOpts.length - 1; i>=0;i--) {
+      // if(rightOpts[i].selected) {
+        leftSel.appendChild(rightOpts[i]);
+      // }
+    }
+  };
+</script>
+</body>
+</html>

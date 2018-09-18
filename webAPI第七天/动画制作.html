@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button id='btn'>按钮</button>
+    <div id="box"></div> 
+<script>  
+//获取元素
+    // var btn = document.getElementById('btn');
+    // var box = document.getElementById('box');
+    // var timer = null;
+    // // 鼠标点击时的效果
+    // btn.onclick = function() {
+    //     timer =setInterval(function() {
+    //         //获取元素当前位置 
+    //         var current = box.offsetLeft;
+    //         //设置运动的步长
+    //         var step = 10;
+    //         //设置运动条件 如果不满足条件运动结束
+    //         if(current < 400) {
+    //         //套用运动公式；元素的新位置 = 元素的旧位置 + 步长
+    //         current = current + step;
+    //         //将新位置设置给left属性
+    //         box.style.left = current +'px';
+    //         }else{
+    //         //设置定时器的清除操作
+    //          clearInterval(timer);
+    //         }
+    //     },20);
+    // };
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    var timer = null;
+    //点击鼠标的效果
+    btn.onclick = (function(){
+        timer = setInterval(function() {
+            //获取元素当前位置
+            var current = box.offsetLeft;
+            //设置运动的步长
+            step = 10;
+            //设置运动条件，不满足条件时动作结束；
+            if(current < 400) {
+                //套用运动公式  元素新位置 = 元素旧位置 + 步长
+                current = current + step;
+                //将新位置设置给left属性；
+                box.style.left = current + 'px';
+            }else {
+                //设置定时器的清除操作
+                clearInterval(timer);
+            }
+        },20);
+    });
+</script> 
+</body>
+</html>

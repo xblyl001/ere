@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    <input type="text" id="ipt" value="我是输入框的默认内容">
+    <script>
+        var ipt = document.getElementById('ipt');
+        // 获取焦点事件 focus
+        ipt.onfocus = function () {
+            // 检测，如果内容为默认提示词，去除
+            if (this.value === '我是输入框的默认内容') {
+                this.value = '';
+            }
+        };
+        // 失去焦点事件 blur
+        ipt.onblur = function () {
+            // 如果为空，还原为默认提示词
+            if (this.value === '') {
+                this.value = '我是输入框的默认内容';
+            }
+        };
+    </script>
+</head>
+<body>
+  
+</body>
+</html>

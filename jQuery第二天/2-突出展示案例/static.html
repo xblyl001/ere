@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    body {
+      background: #000;
+    }
+    
+    .wrap {
+      margin: 100px auto 0;
+      width: 630px;
+      height: 394px;
+      padding: 10px 0 0 10px;
+      background: #000;
+      overflow: hidden;
+      border: 1px solid #fff;
+    }
+    
+    .wrap li {
+      float: left;
+      margin: 0 10px 10px 0;
+      
+    }
+    
+    .wrap img {
+      display: block;
+      border: 0;
+    }
+  </style>
+ <script src="../jquery-1.12.4.min.js"></script>
+ <script>
+   $(function () {
+      // 1 给所有li设置移入事件
+        var $lis = $('li');
+        $lis.mouseenter(function(){
+          $(this).css('opacity',1).siblings().css('opacity',0.5);
+        });
+      // 2 给大盒子.wrap设置移出事件
+      // 由于mouseout事件会进行冒泡所以li移出时触发了大盒子的移出效果
+      // 如果不希望冒泡产生额影响，使用mouseleave即可
+      $('.wrap').mouseout(function() {
+        $(this)
+      })
+  
+   });
+ </script>
+</head>
+<body>
+<div class="wrap">
+  <ul>
+    <li><a href="#"><img src="images/01.jpg" alt=""/></a></li>
+    <li><a href="#"><img src="images/02.jpg" alt=""/></a></li>
+    <li><a href="#"><img src="images/03.jpg" alt=""/></a></li>
+    <li><a href="#"><img src="images/04.jpg" alt=""/></a></li>
+    <li><a href="#"><img src="images/05.jpg" alt=""/></a></li>
+    <li><a href="#"><img src="images/06.jpg" alt=""/></a></li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		var obj = {};
+		var obj2 = new Object();
+
+		function People (name, age) {
+			this.name = name;
+			this.age = age;
+		}
+		People.prototype.sayHi = function () {
+			console.log('这是sayHi');
+		};
+
+		function Student (name, age, school) {
+			People.call(this, name, age);
+			this.school = school
+		}
+		Student.prototype = new People();
+		Student.prototype.study = function () {
+			console.log('这是study');
+		};
+
+		var s1 = new Student('jack', 18, '黑马');
+		console.log(s1);
+
+
+		// console.log(Object.prototype.__proto__);
+
+
+		// console.log(Object.prototype.toString.call([1, 2, 3]));
+		// console.log([1, 2, 3].toString());
+	</script>
+</body>
+</html>

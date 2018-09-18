@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select name="" id="sel">
+		<option value="河北">河北</option>
+		<option value="日本">日本</option>
+		<option value="山东">山东</option>
+		<option value="韩国">韩国</option>
+	</select>
+	<script>
+		var sel =document.getElementById('sel');
+		console.log(sel.value);
+		var options = sel .getElementsByTagName('option');
+		console.log(options[1].selected);
+		options[1].selected = true;
+		console.log(options[1].selected);
+	</script>
+</body>
+</html>

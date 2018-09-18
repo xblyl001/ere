@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		button {
+			background-color:orange;
+			 }
+	</style>
+</head>
+<body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+	<button>按钮5</button>
+	<script>
+		var btns = document.getElementsByTagName('button');
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].onclick =function () {
+				//将所有元素的颜色都清除
+				for (var i = 0; i<btns.length;i++) {
+					btns[i].style.backgroundColor = 'orange';
+				}
+				//设置当前按钮变色
+				this.style.backgroundColor = 'red';
+			};
+		}
+	//课后练习
+	//不进行全部元素的颜色清除，而是找到上一次操作过的元素的元素进行颜色的清除
+	var arr1 = ['按钮1','按钮2','按钮3','按钮4','按钮5'];
+	var btns = document.getElementsByTagName('button');
+	var btn1 = arr.slice(1);
+	var btn2;
+	btn.onclick = function () {
+		if (btn1 = arr.length ==0) {
+			btn1 = arr.slice();
+			btn1.splice(btn1.indexof(btn2),1);
+		}
+		var index = Math.random()*tempArr.length;
+		= btn2 =btn2[index];
+		btn2.splice(index,1);
+	};
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="jquery- 1.12.4.min.js"></script>
+	<script>
+		$(function () {
+			// $('#list').css('width','100px').children('.item').css('backgroundColor','red');
+			$('.text').parent('div').css('backgroundColor','red');
+			$('.li').parent('.stem').text('这是其他同级元素');
+			$('.li').next('div').text('这是最后一个li');
+			$('.li').prev('div').text('这是第一个li');
+
+		});
+	</script>
+</head>
+<body>
+	<ul id="list">
+		<li class = box>
+			<ul class= text>
+				<li>这是后代li</li>
+			</ul>
+		</li>
+		<li>这是li的内容</li>
+		<li>这是li的内容</li>
+		<li>这是li的内容</li>
+		<li>这是li的内容</li>
+	</ul>
+
+</body>
+</html>

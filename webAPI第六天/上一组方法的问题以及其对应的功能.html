@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        var btn = document.getElementById('btn');
+        // ie9以下支持，新版本不支持
+        // 添加事件
+        btn.attachEvent('onclick',function() {
+            console.log('这是第一个点击事件');
+        });
+        var fun = function() {
+            console.log('这是第一个点击事件');
+        };
+        btn.attachEvent('onclick',fun);
+        // 删除事件
+        btn.detachEvent('onclick',fun);
+    </script>
+</body>
+</html>

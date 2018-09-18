@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            widows: 400px;
+            height: 400px;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h3>我是h4</h3>
+        <p>我是box里面的p</p>
+        <p>我是box里面的p</p>
+        <p>我是box里面的p</p>
+        <p>我是box里面的p</p>
+        <span>我是box里面的span</span>
+    </div>
+    <button id="btn">按钮</button>
+    <script>
+        var btn = document.getElementById('btn');
+        var ps = box.children;   //获取所有p标签
+        var btn =document.getElementById('btn');
+        btn.onclick =function () {
+            var p =document.createElement('p');//创建新的动态元素p
+            p.innerText = '这是新的p标签';
+            box.appendChild(p);
+        };
+        box.onclick = function (e) {
+            if(e.target.nodeName ==='p') {
+                console.log('这是p标签的对应操作');
+            } else if(e.target.nodeName ==='SPAN') {
+                console.log('这是span标签的对应操作');
+            } else if(e.target.className ==='title') {
+                console.log('这是类名为title的元素操作');
+            }
+        };
+    </script>
+</body>
+</html>

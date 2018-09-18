@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">下一张图片</button>
+    <img src="images/1.jpg" alt='1'>
+    <img src="images/2.jpg" alt='2'>
+    <img src="images/3.jpg" alt='3'>
+    <img src="images/4.jpg" alt='4'>
+    <img src="images/5.jpg" alt='5'>
+    <script>
+        //功能描述：
+		//- 设置一个按钮和一个图片，默认显示第一张图
+		//- 点击按钮后显示下一张图，以此类推
+		//- 如果当前已经显示最后一张，再次点击后，显示第一张图
+        var btn = document.getElementById('btn');
+        var pic = document.getElementById('img');
+        // btn.onclick = function () {
+        //     var alt = '2';
+        //     if (alt == '2') {
+        //         pic.src = 'images/2.jpg';
+        //     var alt = '3';    
+        //     } else if (alt == '3') {
+        //         pic.src = 'images/3.jpg';
+        //         var alt = '4';
+        //     } else if (alt == '4') {
+        //         pic.src = 'images/4.jpg';
+        //     } else {
+        //         pic.src = 'images/5.jpg';
+        //     };
+    </script>
+</body>
+</html>

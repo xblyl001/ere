@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People (name, age) {
+			this.name = name;
+			this.age = age;
+		}
+		People.prototype.sayHi = function () {
+			console.log('这是sayHi');
+		};
+
+		function Student (name, age, school) {
+			People.call(this, name, age);
+			this.school = school
+		}
+        //使用原型继承可以继承原型中的所有功能，但会增加一些不必要的属性
+        //student.prototype = new people ();
+        //为了去除不必要的
+        Student.prototype.constructor = syudent; 
+		Student.prototype = new People();
+		Student.prototype.study = function () {
+			console.log('这是study');
+		};
+
+		var s1 = new Student('jack', 18, '黑马');
+        console.log('s1')
+        //实例instance instance
+        //某个构造函数存在于某个实例对象的原型原型链中
+    </script>
+</body>
+</html>

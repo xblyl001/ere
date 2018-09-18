@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;
+            left:50px;
+            top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 盒子默认不跟随，点击盒子后，让盒子以点击位置跟随
+    1 在点击盒子时 ，获取鼠标盒子内部的坐标
+    
+    2,设置真正的拖拽效果：需要将点击分为点下和抬起两种操作
+    mousedown  -鼠标按键点击后触发
+    mouseup - 鼠标按键抬起后触发 -->
+    <div id="box"></div>
+    <script>
+        
+        var box = document.getElementById('box');
+        //点下
+    box.onmousedown = function (e) {
+        //计算方式：鼠标坐标 - 盒子的左侧距离
+           var x = e.clientX - box.offsetLeft;
+           var y = e.clientY - box.offsetTop;
+        
+        //鼠标移动跟随
+            document.onmousemove =function (e) {
+            box.style.left = e.clientX - x + 'px';
+            box.style.top = e.clientY - y + 'px';
+        };
+    };
+        // .offsetLeft用于获取当前元素到定位父盒子X轴方向的距离
+        //offsetTop用于获取当前元素到定位父盒子y轴方向的距离
+        //抬起
+        box.onmouseup =function () {
+            document.onmousemove =null;
+        };
+    </script>
+</body>
+</html>

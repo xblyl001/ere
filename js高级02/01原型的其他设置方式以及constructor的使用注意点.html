@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function CreateObj (name) {
+			this.name = name;
+		}
+		// console.log(CreateObj.prototype);
+
+		// 1 设置原型时还可以使用对象直接覆盖的方式设置
+		// 2 原始的原型对象中具有的constructor被覆盖了，需要进行手动的设置操作
+		CreateObj.prototype = {
+			sayHi1 : function () {
+				console.log('这是sayHi');
+			},
+			// sayHi2 : function () {
+			// 	console.log('这是sayHi');
+			// },
+			// sayHi3 : function () {
+			// 	console.log('这是sayHi');
+			// },
+			// sayHi4 : function () {
+			// 	console.log('这是sayHi');
+			// },
+			constructor : CreateObj
+		};
+		console.log(CreateObj.prototype);
+		var c1 = new CreateObj('jack');
+		c1.sayHi1();
+		c1.sayHi2();
+		console.log(c1.constructor === CreateObj);
+
+	</script>
+</body>
+</html>

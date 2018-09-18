@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //递归函数：一个函数在内部自身调用，称为递归。
+        //递归容易出现的问题：
+        // 1死 "循环"
+        // -给递归设置结束条件
+        // -例如：记录递归执行的次数，次数到达，return（使用较少，通常使用for）
+        //例如：观察功能中的规律，设置结束条件
+        //性能问题：
+        //需要尽量减少递归执行的次数
+
+        //斐波那契数列（兔子）：11 2 3 5 8 13 21 34 55 89
+        //数列规律：最前面的两个数是1，后续的值为前两个值得和
+        //设置功能，可计算出数列中某个位置的值，n代表的是第几个数
+        function getFb(n) {
+            //根据规律已知，位置1和位置2的值为1
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            return getFb(n - 1) + getFb(n - 2);
+        }
+        console.log(getFb(51));
+        //// 对递归进行优化操作:
+        // 问题：有些值计算多次，导致调用次数过多，如果这个值 仅仅计算1次，执行会快很多
+
+        // 解决方式：
+        //		使用一个对象记录某个位置和对应得值
+        /*var obj = {};
+        var count = 0;
+        function getFb (n) {
+            count++;
+            // 根据规律已知，位置1和2得值为1
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            // 进行递归操作之前，先检测obj中是否存在对应得数据
+            //		如果存在，直接返回，如果不存在，计算后保存在obj中给下次使用。
+            return obj[n] ? obj[n] : obj[n] = getFb(n - 1) + getFb(n - 2);
+        }
+    	
+        console.log(getFb(1500), count);*/
+
+
+        // 将递归函数和进行优化得数据设置在一个函数中，确保数据得安全。
+        var getFb = (function () {
+            // obj这个数据只和getFb函数得功能相关，不应该被其他代码操作，应当设置为私有变量
+            var obj = {};
+            function getFb(n) {
+                // 根据规律已知，位置1和2得值为1
+                if (n === 1 || n === 2) {
+                    return 1;
+                }
+                // 进行递归操作之前，先检测obj中是否存在对应得数据
+                //		如果存在，直接返回，如果不存在，计算后保存在obj中给下次使用。
+                return obj[n] ? obj[n] : obj[n] = getFb(n - 1) + getFb(n - 2);
+            }
+
+            return getFb;
+        })();
+
+
+        console.log(getFb(20));
+
+    </script>
+    <script>
+        //递归函数：一个函数在内部自身调用，称为递归。
+        //递归容易出现的问题：
+        // 1死 "循环"
+        // -给递归设置结束条件
+        // -例如：记录递归执行的次数，次数到达，return（使用较少，通常使用for）
+        //例如：观察功能中的规律，设置结束条件
+        //性能问题：
+        //需要尽量减少递归执行的次数
+
+        //斐波那契数列（兔子）：11 2 3 5 8 13 21 34 55 89
+        //数列规律：最前面的两个数是1，后续的值为前两个值得和
+        //设置功能，可计算出数列中某个位置的值，n代表的是第几个数
+        function getFb(n) {
+            //根据规律已知，位置1和位置2的值为1
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            return getFb(n - 1) + getFb(n - 2);
+        }
+        console.log(getFb(51));
+        //// 对递归进行优化操作:
+        // 问题：有些值计算多次，导致调用次数过多，如果这个值 仅仅计算1次，执行会快很多
+
+        // 解决方式：
+        //		使用一个对象记录某个位置和对应得值
+        /*var obj = {};
+        var count = 0;
+        function getFb (n) {
+            count++;
+            // 根据规律已知，位置1和2得值为1
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            // 进行递归操作之前，先检测obj中是否存在对应得数据
+            //		如果存在，直接返回，如果不存在，计算后保存在obj中给下次使用。
+            return obj[n] ? obj[n] : obj[n] = getFb(n - 1) + getFb(n - 2);
+        }
+        
+        console.log(getFb(1500), count);*/
+
+
+        // 将递归函数和进行优化得数据设置在一个函数中，确保数据得安全。
+        var getFb = (function () {
+            // obj这个数据只和getFb函数得功能相关，不应该被其他代码操作，应当设置为私有变量
+            var obj = {};
+            function getFb(n) {
+                // 根据规律已知，位置1和2得值为1
+                if (n === 1 || n === 2) {
+                    return 1;
+                }
+                // 进行递归操作之前，先检测obj中是否存在对应得数据
+                //		如果存在，直接返回，如果不存在，计算后保存在obj中给下次使用。
+                return obj[n] ? obj[n] : obj[n] = getFb(n - 1) + getFb(n - 2);
+            }
+
+            return getFb;
+        })();
+
+
+        console.log(getFb(20));
+
+    </script>
+    <script>
+        //递归函数：一个函数在内部自身调用，称为递归。
+        //递归容易出现的问题：
+        // 1死 "循环"
+        // -给递归设置结束条件
+        // -例如：记录递归执行的次数，次数到达，return（使用较少，通常使用for）
+        //例如：观察功能中的规律，设置结束条件
+        //性能问题：
+        //需要尽量减少递归执行的次数
+
+        //斐波那契数列（兔子）：11 2 3 5 8 13 21 34 55 89
+        //数列规律：最前面的两个数是1，后续的值为前两个值得和
+        //设置功能，可计算出数列中某个位置的值，n代表的是第几个数
+        function getFb(n) {
+            //根据规律已知，位置1和位置2的值为1
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            return getFb(n - 1) + getFb(n - 2);
+        }
+        console.log(getFb(51));
+        //// 对递归进行优化操作:
+        // 问题：有些值计算多次，导致调用次数过多，如果这个值 仅仅计算1次，执行会快很多
+
+        // 解决方式：
+        //		使用一个对象记录某个位置和对应得值
+        /*var obj = {};
+        var count = 0;
+        function getFb (n) {
+            count++;
+            // 根据规律已知，位置1和2得值为1
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            // 进行递归操作之前，先检测obj中是否存在对应得数据
+            //		如果存在，直接返回，如果不存在，计算后保存在obj中给下次使用。
+            return obj[n] ? obj[n] : obj[n] = getFb(n - 1) + getFb(n - 2);
+        }
+        
+        console.log(getFb(1500), count);*/
+
+
+        // 将递归函数和进行优化得数据设置在一个函数中，确保数据得安全。
+        var getFb = (function () {
+            // obj这个数据只和getFb函数得功能相关，不应该被其他代码操作，应当设置为私有变量
+            var obj = {};
+            function getFb(n) {
+                // 根据规律已知，位置1和2得值为1
+                if (n === 1 || n === 2) {
+                    return 1;
+                }
+                // 进行递归操作之前，先检测obj中是否存在对应得数据
+                //		如果存在，直接返回，如果不存在，计算后保存在obj中给下次使用。
+                return obj[n] ? obj[n] : obj[n] = getFb(n - 1) + getFb(n - 2);
+            }
+
+            return getFb;
+        })();
+
+
+        console.log(getFb(20));
+
+    </script>
+</body>
+</html>
